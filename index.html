@@ -116,28 +116,28 @@
     </style>
 </head>
 <body class="antialiased">
-
-    <!-- Navigation -->
-    <!-- Navigation -->
-<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 lg:px-12 bg-transparent">
-    <div class="max-w-[1800px] mx-auto flex justify-between items-center">
-        <!-- Logo: Bolder weights -->
-        <a href="#" class="flex flex-col items-start group">
-            <span class="font-serif text-2xl lg:text-3xl text-charcoal font-bold leading-none tracking-tight group-hover:text-gold transition-colors duration-300">Abijo Sand</span>
-            <span class="text-[10px] uppercase tracking-[0.4em] text-gold mt-1 font-bold">Residence</span>
+<!-- Navigation -->
+<nav id="navbar" class="fixed w-full z-50 bg-[#F5F3F0] border-b border-gray-200/50 py-5 px-6 lg:px-12">
+    <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+        
+        <!-- Logo: Single line, sans-serif, uppercase, wide tracking -->
+        <a href="#" class="flex items-center gap-2 group">
+            <span class="font-sans text-lg font-bold tracking-[0.15em] text-charcoal uppercase">ABIJO SAND</span>
+            <span class="font-sans text-lg font-bold tracking-[0.15em] text-[#C4A77D] uppercase">RESIDENCE</span>
         </a>
         
-        <!-- Center Navigation: Bolder links -->
-        <div class="hidden md:flex items-center gap-12 lg:gap-16 absolute left-1/2 transform -translate-x-1/2">
-            <a href="#suites" class="text-sm font-semibold text-warm hover:text-charcoal transition-colors tracking-wide">Suites</a>
-            <a href="#gallery" class="text-sm font-semibold text-warm hover:text-charcoal transition-colors tracking-wide">Gallery</a>
-            <a href="#experience" class="text-sm font-semibold text-warm hover:text-charcoal transition-colors tracking-wide">Experience</a>
-            <a href="#location" class="text-sm font-semibold text-warm hover:text-charcoal transition-colors tracking-wide">Location</a>
+        <!-- Center Navigation Links -->
+        <div class="hidden md:flex items-center gap-10">
+            <a href="#suites" class="text-base font-medium text-gray-500 hover:text-charcoal transition-colors">Suites</a>
+            <a href="#amenities" class="text-base font-medium text-gray-500 hover:text-charcoal transition-colors">Amenities</a>
+            <a href="#location" class="text-base font-medium text-gray-500 hover:text-charcoal transition-colors">Location</a>
+            <a href="#reviews" class="text-base font-medium text-gray-500 hover:text-charcoal transition-colors">Reviews</a>
+            <a href="#contact" class="text-base font-medium text-gray-500 hover:text-charcoal transition-colors">Contact</a>
         </div>
 
-        <!-- Book Button: Bolder text -->
-        <button onclick="scrollToBooking()" class="bg-charcoal text-white px-8 py-3.5 text-sm font-bold tracking-wide hover:bg-gold transition-all duration-300 shadow-lg uppercase">
-            Book Stay
+        <!-- Book Now Button: Gold background, rounded, white text -->
+        <button onclick="scrollToBooking()" class="bg-[#C4A77D] text-white px-8 py-3 rounded-full text-sm font-semibold tracking-wide hover:bg-[#B8956C] transition-all duration-300 shadow-sm">
+            Book Now
         </button>
 
         <!-- Mobile Menu Button -->
@@ -147,16 +147,14 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-cream z-40 pt-24 px-6">
-        <button onclick="toggleMenu()" class="absolute top-6 right-6 text-charcoal">
-            <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
-        <div class="flex flex-col gap-8 items-center text-center">
-            <a href="#suites" onclick="toggleMenu()" class="font-serif text-3xl text-charcoal font-bold">Suites</a>
-            <a href="#gallery" onclick="toggleMenu()" class="font-serif text-3xl text-charcoal font-bold">Gallery</a>
-            <a href="#experience" onclick="toggleMenu()" class="font-serif text-3xl text-charcoal font-bold">Experience</a>
-            <a href="#location" onclick="toggleMenu()" class="font-serif text-3xl text-charcoal font-bold">Location</a>
-            <button onclick="toggleMenu(); scrollToBooking()" class="bg-charcoal text-white px-8 py-4 text-lg font-bold mt-8 w-full max-w-xs uppercase tracking-wider">Book Your Stay</button>
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-[#F5F3F0] z-40 pt-24 px-6 top-[72px]">
+        <div class="flex flex-col gap-6 items-center text-center">
+            <a href="#suites" onclick="toggleMenu()" class="text-xl font-medium text-gray-600">Suites</a>
+            <a href="#amenities" onclick="toggleMenu()" class="text-xl font-medium text-gray-600">Amenities</a>
+            <a href="#location" onclick="toggleMenu()" class="text-xl font-medium text-gray-600">Location</a>
+            <a href="#reviews" onclick="toggleMenu()" class="text-xl font-medium text-gray-600">Reviews</a>
+            <a href="#contact" onclick="toggleMenu()" class="text-xl font-medium text-gray-600">Contact</a>
+            <button onclick="toggleMenu(); scrollToBooking()" class="bg-[#C4A77D] text-white px-8 py-3 rounded-full font-semibold mt-4 w-full max-w-xs">Book Now</button>
         </div>
     </div>
 </nav>
@@ -171,32 +169,16 @@
         document.getElementById('suites').scrollIntoView({ behavior: 'smooth' });
     }
 
+    // Optional: Add scroll effect for transparency
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('navbar');
         if (window.scrollY > 50) {
-            nav.classList.add('bg-cream/95', 'backdrop-blur-sm', 'shadow-sm');
-            nav.classList.remove('bg-transparent', 'py-6');
-            nav.classList.add('py-4');
+            nav.classList.add('shadow-sm');
         } else {
-            nav.classList.remove('bg-cream/95', 'backdrop-blur-sm', 'shadow-sm', 'py-4');
-            nav.classList.add('bg-transparent', 'py-6');
+            nav.classList.remove('shadow-sm');
         }
     });
 </script>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden fixed inset-0 bg-cream/98 backdrop-blur-md z-40 pt-24 px-6">
-            <button onclick="toggleMenu()" class="absolute top-6 right-6 text-charcoal">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div class="flex flex-col gap-8">
-                <a href="#suites" onclick="toggleMenu()" class="font-serif text-4xl text-charcoal">Suites</a>
-                <a href="#gallery" onclick="toggleMenu()" class="font-serif text-4xl text-charcoal">Gallery</a>
-                <a href="#experience" onclick="toggleMenu()" class="font-serif text-4xl text-charcoal">Experience</a>
-                <a href="#location" onclick="toggleMenu()" class="font-serif text-4xl text-charcoal">Location</a>
-                <button onclick="toggleMenu(); scrollToBooking()" class="bg-charcoal text-white py-4 text-lg font-medium mt-8">Book Your Stay</button>
-            </div>
-        </div>
-    </nav>
 
     <!-- Hero Section - Editorial Layout -->
     <section class="min-h-screen relative flex items-end pb-20 lg:pb-32 pt-32 px-6 lg:px-12 overflow-hidden">

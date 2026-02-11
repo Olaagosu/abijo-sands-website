@@ -167,65 +167,201 @@
             </div>
         </div>
     </section>
+<!-- Booking Section -->
+<section id="booking" class="bg-[#F5F3F0] py-24 px-6 lg:px-12 border-t border-gray-200">
+    <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div class="aspect-[4/3] bg-gray-200 overflow-hidden rounded-lg">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200&auto=format&fit=crop" alt="Booking" class="w-full h-full object-cover">
+        </div>
 
-    <!-- Booking Section -->
-    <section id="booking" class="bg-[#F5F3F0] py-24 px-6 lg:px-12 border-t border-gray-200">
-        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            <div class="aspect-[4/3] bg-gray-200 overflow-hidden rounded-lg">
-                <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200&auto=format&fit=crop" alt="Booking" class="w-full h-full object-cover">
+        <div class="lg:pl-8">
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight mb-4">
+                Check Availability
+            </h2>
+            <p class="text-gray-500 text-lg mb-10 leading-relaxed">Select your dates and suite. Instant confirmation. Flexible cancellation up to 48 hours before arrival.</p>
+
+            <form id="booking-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Check In</label>
+                        <input type="date" id="checkin" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C]">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Check Out</label>
+                        <input type="date" id="checkout" required 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C]">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Guests</label>
+                        <select id="guests" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C] bg-white">
+                            <option>1 Guest</option>
+                            <option selected>2 Guests</option>
+                            <option>3 Guests</option>
+                            <option>4 Guests</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Suite</label>
+                        <select id="suite" onchange="calculatePrice()" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C] bg-white">
+                            <option value="85000">Executive 2-Bedroom - ₦85,000/night</option>
+                            <option value="55000" selected>Deluxe Studio - ₦55,000/night</option>
+                            <option value="40000">Standard Studio - ₦40,000/night</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Price Display -->
+                <div id="price-display" class="bg-white p-4 rounded-lg border border-gray-200 hidden">
+                    <div class="flex justify-between mb-2">
+                        <span class="text-gray-600" id="nights-count">0 nights</span>
+                        <span class="font-bold" id="price-breakdown">₦0</span>
+                    </div>
+                    <div class="flex justify-between text-lg font-black text-[#1C1C1C]">
+                        <span>TOTAL</span>
+                        <span id="total-price">₦0</span>
+                    </div>
+                </div>
+
+                <button type="button" onclick="openBookingModal()" 
+                        class="w-full bg-[#C4A77D] text-white py-4 rounded-lg font-bold uppercase tracking-widest hover:bg-[#B8956C] transition-all duration-300">
+                    Check Availability & Book
+                </button>
+
+                <div class="flex justify-center gap-8 text-sm text-gray-500 pt-4">
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#C4A77D]"></i>Best price guarantee</span>
+                    <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-[#C4A77D]"></i>Secure payment</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Modal -->
+<div id="booking-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-md w-full p-8 relative">
+        <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-[#1C1C1C]">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        
+        <h3 class="text-2xl font-black uppercase tracking-tight mb-6">Complete Your Booking</h3>
+        
+        <div class="space-y-4 mb-6">
+            <div class="flex justify-between text-sm">
+                <span class="text-gray-500">Check-in:</span>
+                <span class="font-semibold" id="modal-checkin">-</span>
             </div>
-
-            <div class="lg:pl-8">
-                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight mb-4">
-                    Check Availability
-                </h2>
-                <p class="text-gray-500 text-lg mb-10 leading-relaxed">Select your dates and suite. Instant confirmation. Flexible cancellation up to 48 hours before arrival.</p>
-
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Check In</label>
-                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C]">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Check Out</label>
-                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C]">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Guests</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C] appearance-none bg-white">
-                                <option>1 Guest</option>
-                                <option selected>2 Guests</option>
-                                <option>3 Guests</option>
-                                <option>4 Guests</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Suite</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C] appearance-none bg-white">
-                                <option>Executive 2-Bedroom</option>
-                                <option>Deluxe Studio</option>
-                                <option>Standard Studio</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="button" class="w-full bg-[#C4A77D] text-white py-4 rounded-lg font-bold uppercase tracking-widest hover:bg-[#B8956C] transition-all duration-300">
-                        Check Availability & Book
-                    </button>
-
-                    <div class="flex justify-center gap-8 text-sm text-gray-500 pt-4">
-                        <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#C4A77D]"></i>Best price guarantee</span>
-                        <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-[#C4A77D]"></i>Secure payment</span>
-                    </div>
-                </form>
+            <div class="flex justify-between text-sm">
+                <span class="text-gray-500">Check-out:</span>
+                <span class="font-semibold" id="modal-checkout">-</span>
+            </div>
+            <div class="flex justify-between text-sm">
+                <span class="text-gray-500">Guests:</span>
+                <span class="font-semibold" id="modal-guests">-</span>
+            </div>
+            <div class="flex justify-between text-sm">
+                <span class="text-gray-500">Nights:</span>
+                <span class="font-semibold" id="modal-nights">-</span>
+            </div>
+            <div class="border-t border-gray-200 pt-4 flex justify-between items-center">
+                <span class="font-bold uppercase">Total:</span>
+                <span class="text-3xl font-black text-[#C4A77D]" id="modal-total">₦0</span>
             </div>
         </div>
-    </section>
+
+        <button onclick="processPayment()" class="w-full bg-[#1C1C1C] text-white py-4 rounded-lg font-bold uppercase tracking-widest hover:bg-[#C4A77D] transition-all mb-3">
+            Pay with Paystack
+        </button>
+        
+        <p class="text-xs text-center text-gray-400">You will be redirected to complete payment securely</p>
+    </div>
+</div>
+
+<script>
+    // Set default dates
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    
+    document.getElementById('checkin').value = today.toISOString().split('T')[0];
+    document.getElementById('checkout').value = tomorrow.toISOString().split('T')[0];
+    document.getElementById('checkin').min = today.toISOString().split('T')[0];
+    
+    // Calculate price when dates change
+    document.getElementById('checkin').addEventListener('change', calculatePrice);
+    document.getElementById('checkout').addEventListener('change', calculatePrice);
+    
+    function calculatePrice() {
+        const checkin = new Date(document.getElementById('checkin').value);
+        const checkout = new Date(document.getElementById('checkout').value);
+        const suitePrice = parseInt(document.getElementById('suite').value);
+        
+        if (checkin && checkout && checkout > checkin) {
+            const nights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
+            const total = nights * suitePrice;
+            
+            document.getElementById('price-display').classList.remove('hidden');
+            document.getElementById('nights-count').textContent = nights + ' nights';
+            document.getElementById('price-breakdown').textContent = '₦' + total.toLocaleString();
+            document.getElementById('total-price').textContent = '₦' + total.toLocaleString();
+            
+            return { nights, total, checkin, checkout };
+        }
+        return null;
+    }
+    
+    function openBookingModal() {
+        const booking = calculatePrice();
+        if (!booking) {
+            alert('Please select valid check-in and check-out dates');
+            return;
+        }
+        
+        const suiteSelect = document.getElementById('suite');
+        const suiteName = suiteSelect.options[suiteSelect.selectedIndex].text.split(' - ')[0];
+        
+        document.getElementById('modal-checkin').textContent = document.getElementById('checkin').value;
+        document.getElementById('modal-checkout').textContent = document.getElementById('checkout').value;
+        document.getElementById('modal-guests').textContent = document.getElementById('guests').value;
+        document.getElementById('modal-nights').textContent = booking.nights;
+        document.getElementById('modal-total').textContent = '₦' + booking.total.toLocaleString();
+        
+        document.getElementById('booking-modal').classList.remove('hidden');
+    }
+    
+    function closeBookingModal() {
+        document.getElementById('booking-modal').classList.add('hidden');
+    }
+    
+    function processPayment() {
+        // Get booking details
+        const suiteSelect = document.getElementById('suite');
+        const suiteName = suiteSelect.options[suiteSelect.selectedIndex].text.split(' - ')[0];
+        const total = document.getElementById('modal-total').textContent.replace(/[^0-9]/g, '');
+        
+        // REPLACE with your actual Paystack payment link
+        // Format: https://paystack.com/pay/YOUR_PAYMENT_LINK?amount=8500000&metadata=suite_name
+        const paystackLink = 'https://paystack.com/pay/abijosand';
+        
+        // Or use Stripe:
+        // const stripeLink = 'https://checkout.stripe.com/pay/cs_live_...';
+        
+        alert('Redirecting to payment...\n\nSuite: ' + suiteName + '\nAmount: ₦' + total + '\n\nReplace the paystackLink in the code with your actual payment link.');
+        
+        // Uncomment this when you have your real link:
+        // window.open(paystackLink, '_blank');
+        
+        closeBookingModal();
+    }
+    
+    // Initialize
+    calculatePrice();
+    lucide.createIcons();
+</script>
 
     <!-- Amenities Section - DARK -->
     <section id="amenities" class="bg-[#1C1C1C] text-white py-24 px-6 lg:px-12">

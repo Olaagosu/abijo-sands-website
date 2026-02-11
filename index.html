@@ -1,13 +1,360 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abijo Sand Residence</title>
-    <script type="module" crossorigin src="./assets/index-CyWwZNtH.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-J3Z8Nuf_.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abijo Sand Residence | Premium Short-Stay Apartments in Lekki</title>
+    <meta name="description" content="Premium short-stay apartments in Abijo, Lekki. Minimal design, maximum calm. Three exceptional spaces for business travelers and diaspora families.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Abijo Sand Residence</a>
+            <ul class="nav-links">
+                <li><a href="#collection">The Collection</a></li>
+                <li><a href="#spaces">Spaces</a></li>
+                <li><a href="#neighborhood">Location</a></li>
+                <li><a href="#contact" class="btn-nav">Book Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80" alt="Luxury Living Room">
+        </div>
+        <div class="hero-content">
+            <h1>A Gallery Of Rooms</h1>
+            <p class="subtitle">Premium short-stay apartments in Lekki. Minimal design, maximum calm.</p>
+        </div>
+    </header>
+
+    <!-- Availability Section -->
+    <section class="availability" id="collection">
+        <div class="container">
+            <h2>Check Availability</h2>
+            <p class="section-desc">Select your dates and suite. Instant confirmation. Flexible cancellation up to 48 hours before arrival.</p>
+            
+            <div class="booking-widget">
+                <div class="booking-form">
+                    <div class="form-group">
+                        <label>Check In</label>
+                        <input type="date" id="checkin">
+                    </div>
+                    <div class="form-group">
+                        <label>Check Out</label>
+                        <input type="date" id="checkout">
+                    </div>
+                    <div class="form-group">
+                        <label>Guests</label>
+                        <select id="guests">
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary" onclick="checkAvailability()">Check Availability</button>
+                </div>
+                <div class="trust-badges">
+                    <span>✓ Best price guarantee</span>
+                    <span>✓ Secure payment</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spaces Section -->
+    <section class="spaces" id="spaces">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Space</h2>
+                <p>Three exceptional spaces, one uncompromising standard of luxury</p>
+            </div>
+            
+            <div class="spaces-grid">
+                <!-- 1 Bedroom Executive -->
+                <div class="space-card featured">
+                    <div class="space-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Executive One Bedroom">
+                        <span class="badge">Most Popular</span>
+                    </div>
+                    <div class="space-info">
+                        <h3>One Bedroom Executive</h3>
+                        <p class="space-desc">Spacious sanctuary with separate living area, perfect for extended stays</p>
+                        <ul class="features">
+                            <li>• King-size bed</li>
+                            <li>• Fully equipped kitchen</li>
+                            <li>• Dedicated workspace</li>
+                            <li>• 65m²</li>
+                        </ul>
+                        <div class="space-footer">
+                            <span class="price">From ₦85,000<span>/night</span></span>
+                            <button class="btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Studio A -->
+                <div class="space-card">
+                    <div class="space-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Deluxe Studio">
+                    </div>
+                    <div class="space-info">
+                        <h3>Deluxe Studio</h3>
+                        <p class="space-desc">Intimate luxury with smart layout and premium finishes</p>
+                        <ul class="features">
+                            <li>• Queen-size bed</li>
+                            <li>• Kitchenette</li>
+                            <li>• City views</li>
+                            <li>• 45m²</li>
+                        </ul>
+                        <div class="space-footer">
+                            <span class="price">From ₦65,000<span>/night</span></span>
+                            <button class="btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Studio B -->
+                <div class="space-card">
+                    <div class="space-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Premium Studio">
+                    </div>
+                    <div class="space-info">
+                        <h3>Premium Studio</h3>
+                        <p class="space-desc">Modern elegance with garden views and serene atmosphere</p>
+                        <ul class="features">
+                            <li>• Queen-size bed</li>
+                            <li>• Full kitchen</li>
+                            <li>• Garden terrace</li>
+                            <li>• 50m²</li>
+                        </ul>
+                        <div class="space-footer">
+                            <span class="price">From ₦70,000<span>/night</span></span>
+                            <button class="btn-outline">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities">
+        <div class="container">
+            <h2>Everything You Need</h2>
+            <div class="amenities-grid">
+                <div class="amenity">
+                    <span class="icon">📶</span>
+                    <h4>High-speed Wi-Fi</h4>
+                    <p>Fiber-optic internet throughout</p>
+                </div>
+                <div class="amenity">
+                    <span class="icon">📺</span>
+                    <h4>Smart TV + Streaming</h4>
+                    <p>Netflix, YouTube & more</p>
+                </div>
+                <div class="amenity">
+                    <span class="icon">🍳</span>
+                    <h4>Fully Equipped Kitchen</h4>
+                    <p>Cookware, utensils & appliances</p>
+                </div>
+                <div class="amenity">
+                    <span class="icon">⚡</span>
+                    <h4>Inverter & Solar Backup</h4>
+                    <p>24/7 uninterrupted power</p>
+                </div>
+                <div class="amenity">
+                    <span class="icon">🚗</span>
+                    <h4>Secure Parking</h4>
+                    <p>On-site parking space</p>
+                </div>
+                <div class="amenity">
+                    <span class="icon">🧹</span>
+                    <h4>Daily Cleaning</h4>
+                    <p>On-request housekeeping</p>
+                </div>
+                <div class="amenity">
+                    <span class="icon">❄️</span>
+                    <h4>Air Conditioning</h4>
+                    <p>Split-unit AC in all rooms</p>
+                </div>
+                <div class="amenity">
+                    <span class="icon">🤝</span>
+                    <h4>Concierge Support</h4>
+                    <p>24/7 guest assistance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neighborhood Section -->
+    <section class="neighborhood" id="neighborhood">
+        <div class="container">
+            <div class="neighborhood-content">
+                <div class="neighborhood-text">
+                    <h2>The Neighborhood</h2>
+                    <p>Located in the serene Fidiso Estate, Abijo Sand Residence offers the perfect balance of tranquility and accessibility. The property is strategically positioned to provide easy access to major business districts, shopping centres, and entertainment hubs across Lekki and Victoria Island.</p>
+                    
+                    <div class="location-grid">
+                        <div class="location-category">
+                            <h4>Business Districts</h4>
+                            <ul>
+                                <li><span>Lekki Phase 1</span><span>15 mins</span></li>
+                                <li><span>Victoria Island</span><span>20 mins</span></li>
+                            </ul>
+                        </div>
+                        <div class="location-category">
+                            <h4>Leisure & Lifestyle</h4>
+                            <ul>
+                                <li><span>Elegushi Beach</span><span>25 mins</span></li>
+                                <li><span>Lakowe Golf Resort</span><span>15 mins</span></li>
+                            </ul>
+                        </div>
+                        <div class="location-category">
+                            <h4>Shopping & Dining</h4>
+                            <ul>
+                                <li><span>Novare Mall (Shoprite)</span><span>10 mins</span></li>
+                                <li><span>The Place Restaurant</span><span>10 mins</span></li>
+                                <li><span>Local Markets</span><span>5 mins</span></li>
+                            </ul>
+                        </div>
+                        <div class="location-category">
+                            <h4>Healthcare</h4>
+                            <ul>
+                                <li><span>Reddington Hospital</span><span>12 mins</span></li>
+                                <li><span>Murtala Muhammed Int'l Airport</span><span>45 mins</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Word on the Street</h2>
+            <p class="section-subtitle">What our guests say about their stay</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="quote">"Exceptional service and beautiful apartment. The attention to detail is remarkable. Perfect for my business trip - quiet, secure, and fully equipped. Will definitely return."</div>
+                    <div class="author">
+                        <div class="avatar">JD</div>
+                        <div class="author-info">
+                            <h4>James D.</h4>
+                            <span>Business Traveler • January 2026</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="quote">"Stayed here with my family for the holidays. The 2-bedroom executive suite was spacious and immaculate. The kitchen had everything we needed. Felt like home away from home!"</div>
+                    <div class="author">
+                        <div class="avatar">SA</div>
+                        <div class="author-info">
+                            <h4>Sarah A.</h4>
+                            <span>Family Vacation • December 2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="quote">"Coming from London, I wanted somewhere reliable and comfortable. Abijo Sand exceeded all expectations. The WiFi was fast, power was constant, and the staff was incredibly helpful."</div>
+                    <div class="author">
+                        <div class="avatar">OK</div>
+                        <div class="author-info">
+                            <h4>Olumide K.</h4>
+                            <span>Diaspora Visit • November 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Host Section -->
+    <section class="host">
+        <div class="container">
+            <div class="host-grid">
+                <div class="host-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Your Host">
+                </div>
+                <div class="host-content">
+                    <span class="label">Your Host</span>
+                    <h2>Designed for Calm.<br>Built for Comfort.</h2>
+                    <p>We built Abijo Sand Residence as a place to reset—clean lines, reliable power, and a team that cares. Every detail has been thoughtfully curated to ensure your stay is nothing short of exceptional.</p>
+                    <p>Whether you are here for business or leisure, our apartments provide the perfect sanctuary in the heart of Lekki. Experience luxury living with the warmth of home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Book Your Stay</h2>
+                <p>Instant confirmation. Flexible arrival. 24/7 support.</p>
+                <button class="btn-primary btn-large" onclick="scrollToBooking()">Check Availability</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Abijo Sand Residence</h3>
+                    <p>No 1 Lawyer Close, Fidiso Estate<br>Abijo, Lekki, Lagos, Nigeria</p>
+                    <div class="contact-info">
+                        <a href="tel:+234XXXXXXXXXX">+234 XXX XXX XXXX</a>
+                        <a href="mailto:hello@abijosand.com">hello@abijosand.com</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#spaces">Our Spaces</a></li>
+                        <li><a href="#neighborhood">Location</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Send a Message</h4>
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <textarea placeholder="Your Message" rows="3" required></textarea>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Abijo Sand Residence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>

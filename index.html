@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -33,26 +33,25 @@
     <nav class="fixed w-full z-50 bg-[#F5F3F0] border-b border-gray-200/50 py-5 px-6 lg:px-12">
         <div class="max-w-[1400px] mx-auto flex justify-between items-center">
             <a href="#" class="flex items-center gap-2">
-                <span class="text-base lg:text-lg font-bold tracking-[0.15em] text-[#1C1C1C] uppercase">ABIJO SAND</span>
-                <span class="text-base lg:text-lg font-bold tracking-[0.15em] text-[#C4A77D] uppercase">RESIDENCE</span>
+                <span class="text-base lg:text-lg font-black tracking-[0.15em] text-[#1C1C1C] uppercase">ABIJO SAND</span>
+                <span class="text-base lg:text-lg font-black tracking-[0.15em] text-[#C4A77D] uppercase">RESIDENCE</span>
             </a>
             
             <div class="hidden md:flex items-center gap-8 lg:gap-10">
-                <a href="#suites" class="text-sm font-medium text-gray-500 hover:text-[#1C1C1C]">Suites</a>
-                <a href="#amenities" class="text-sm font-medium text-gray-500 hover:text-[#1C1C1C]">Amenities</a>
-                <a href="#reviews" class="text-sm font-medium text-gray-500 hover:text-[#1C1C1C]">Reviews</a>
-                <a href="#location" class="text-sm font-medium text-gray-500 hover:text-[#1C1C1C]">Location</a>
-                <a href="#contact" class="text-sm font-medium text-gray-500 hover:text-[#1C1C1C]">Contact</a>
+                <a href="#suites" class="text-sm font-semibold text-gray-500 hover:text-[#1C1C1C] transition-colors uppercase tracking-wide">Suites</a>
+                <a href="#amenities" class="text-sm font-semibold text-gray-500 hover:text-[#1C1C1C] transition-colors uppercase tracking-wide">Amenities</a>
+                <a href="#reviews" class="text-sm font-semibold text-gray-500 hover:text-[#1C1C1C] transition-colors uppercase tracking-wide">Reviews</a>
+                <a href="#location" class="text-sm font-semibold text-gray-500 hover:text-[#1C1C1C] transition-colors uppercase tracking-wide">Location</a>
+                <a href="#contact" class="text-sm font-semibold text-gray-500 hover:text-[#1C1C1C] transition-colors uppercase tracking-wide">Contact</a>
             </div>
 
             <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" 
-                    class="bg-[#C4A77D] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#B8956C] transition-all">
+                    class="bg-[#C4A77D] text-white px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:bg-[#B8956C] transition-all shadow-sm uppercase">
                 Book Now
             </button>
         </div>
     </nav>
 
-    <!-- Spacer for fixed nav -->
     <div class="h-20"></div>
 
     <!-- Hero Section -->
@@ -62,16 +61,20 @@
             <div class="absolute inset-0 bg-black/30"></div>
         </div>
         <div class="relative z-10 text-center text-white px-6">
-            <h1 class="text-5xl md:text-7xl font-light mb-6">Your Luxury Home<br>Away From Home</h1>
-            <p class="text-xl font-light opacity-90">Premium serviced apartments at Fidiso Estate, Abijo Lekki</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight mb-6 leading-[0.95]">
+                Your Luxury Home<br>Away From Home
+            </h1>
+            <p class="text-xl font-light opacity-90 tracking-wide uppercase text-sm">Premium serviced apartments at Fidiso Estate, Abijo Lekki</p>
         </div>
     </section>
 
     <!-- Suites Section -->
-    <section id="suites" class="py-20 px-6 lg:px-12 bg-[#F5F3F0]">
+    <section id="suites" class="py-24 px-6 lg:px-12 bg-[#F5F3F0]">
         <div class="max-w-[1400px] mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-[#1C1C1C] mb-4">Choose Your Space</h2>
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight mb-4">
+                    Choose Your Space
+                </h2>
                 <p class="text-gray-500 text-lg font-light">Three exceptional spaces, one uncompromising standard of luxury</p>
             </div>
 
@@ -91,16 +94,16 @@
                             <span>85 sqm</span>
                         </div>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-gray-100 text-xs rounded">King Bed</span>
-                            <span class="px-3 py-1 bg-gray-100 text-xs rounded">Full Kitchen</span>
-                            <span class="px-3 py-1 bg-gray-100 text-xs rounded">Balcony</span>
+                            <span class="px-3 py-1 bg-gray-100 text-xs rounded uppercase tracking-wide">King Bed</span>
+                            <span class="px-3 py-1 bg-gray-100 text-xs rounded uppercase tracking-wide">Full Kitchen</span>
+                            <span class="px-3 py-1 bg-gray-100 text-xs rounded uppercase tracking-wide">Balcony</span>
                         </div>
                         <div class="flex items-center justify-between pt-4 border-t border-gray-100">
                             <div>
-                                <span class="text-3xl font-bold text-[#1C1C1C]">₦85,000</span>
+                                <span class="text-3xl font-black text-[#1C1C1C]">₦85,000</span>
                                 <span class="text-gray-400 text-sm">/night</span>
                             </div>
-                            <button class="px-6 py-2 border-2 border-[#C4A77D] text-[#C4A77D] rounded-lg font-medium hover:bg-[#C4A77D] hover:text-white transition-all">Book</button>
+                            <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="px-6 py-2 border-2 border-[#C4A77D] text-[#C4A77D] rounded-lg font-bold hover:bg-[#C4A77D] hover:text-white transition-all uppercase text-sm tracking-wide">Book</button>
                         </div>
                     </div>
                 </div>
@@ -119,16 +122,16 @@
                             <span>45 sqm</span>
                         </div>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-gray-100 text-xs rounded">Queen Bed</span>
-                            <span class="px-3 py-1 bg-gray-100 text-xs rounded">Kitchenette</span>
-                            <span class="px-3 py-1 bg-gray-100 text-xs rounded">Work Desk</span>
+                            <span class="px-3 py-1 bg-gray-100 text-xs rounded uppercase tracking-wide">Queen Bed</span>
+                            <span class="px-3 py-1 bg-gray-100 text-xs rounded uppercase tracking-wide">Kitchenette</span>
+                            <span class="px-3 py-1 bg-gray-100 text-xs rounded uppercase tracking-wide">Work Desk</span>
                         </div>
                         <div class="flex items-center justify-between pt-4 border-t border-gray-100">
                             <div>
-                                <span class="text-3xl font-bold text-[#1C1C1C]">₦55,000</span>
+                                <span class="text-3xl font-black text-[#1C1C1C]">₦55,000</span>
                                 <span class="text-gray-400 text-sm">/night</span>
                             </div>
-                            <button class="px-6 py-2 border-2 border-[#C4A77D] text-[#C4A77D] rounded-lg font-medium hover:bg-[#C4A77D] hover:text-white transition-all">Book</button>
+                            <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="px-6 py-2 border-2 border-[#C4A77D] text-[#C4A77D] rounded-lg font-bold hover:bg-[#C4A77D] hover:text-white transition-all uppercase text-sm tracking-wide">Book</button>
                         </div>
                     </div>
                 </div>
@@ -147,16 +150,16 @@
                             <span>35 sqm</span>
                         </div>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-gray-100 text-xs rounded">Queen Bed</span>
-                            <span class="px-3 py-1 bg-gray-100 text-xs rounded">Kitchenette</span>
-                            <span class="px-3 py-1 bg-gray-100 text-xs rounded">Smart TV</span>
+                            <span class="px-3 py-1 bg-gray-100 text-xs rounded uppercase tracking-wide">Queen Bed</span>
+                            <span class="px-3 py-1 bg-gray-100 text-xs rounded uppercase tracking-wide">Kitchenette</span>
+                            <span class="px-3 py-1 bg-gray-100 text-xs rounded uppercase tracking-wide">Smart TV</span>
                         </div>
                         <div class="flex items-center justify-between pt-4 border-t border-gray-100">
                             <div>
-                                <span class="text-3xl font-bold text-[#1C1C1C]">₦40,000</span>
+                                <span class="text-3xl font-black text-[#1C1C1C]">₦40,000</span>
                                 <span class="text-gray-400 text-sm">/night</span>
                             </div>
-                            <button class="px-6 py-2 border-2 border-[#C4A77D] text-[#C4A77D] rounded-lg font-medium hover:bg-[#C4A77D] hover:text-white transition-all">Book</button>
+                            <button onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})" class="px-6 py-2 border-2 border-[#C4A77D] text-[#C4A77D] rounded-lg font-bold hover:bg-[#C4A77D] hover:text-white transition-all uppercase text-sm tracking-wide">Book</button>
                         </div>
                     </div>
                 </div>
@@ -166,44 +169,34 @@
     </section>
 
     <!-- Booking Section -->
-    <section id="booking" class="bg-[#F5F3F0] py-20 px-6 lg:px-12">
+    <section id="booking" class="bg-[#F5F3F0] py-24 px-6 lg:px-12 border-t border-gray-200">
         <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            <!-- Left Image -->
             <div class="aspect-[4/3] bg-gray-200 overflow-hidden rounded-lg">
-                <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200&auto=format&fit=crop" 
-                     alt="Apartment Interior" 
-                     class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200&auto=format&fit=crop" alt="Booking" class="w-full h-full object-cover">
             </div>
 
-            <!-- Right Form -->
             <div class="lg:pl-8">
-                <h2 class="text-5xl md:text-6xl font-black text-[#1C1C1C] uppercase tracking-tight mb-4">
-                    CHECK AVAILABILITY
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight mb-4">
+                    Check Availability
                 </h2>
-                <p class="text-gray-500 text-lg mb-10 leading-relaxed">
-                    Select your dates and suite. Instant confirmation. Flexible cancellation up to 48 hours before arrival.
-                </p>
+                <p class="text-gray-500 text-lg mb-10 leading-relaxed">Select your dates and suite. Instant confirmation. Flexible cancellation up to 48 hours before arrival.</p>
 
                 <form class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Check-in -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">CHECK-IN</label>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Check In</label>
                             <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C]">
                         </div>
-
-                        <!-- Check-out -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">CHECK-OUT</label>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Check Out</label>
                             <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C]">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Guests -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">GUESTS</label>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Guests</label>
                             <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C] appearance-none bg-white">
                                 <option>1 Guest</option>
                                 <option selected>2 Guests</option>
@@ -211,10 +204,8 @@
                                 <option>4 Guests</option>
                             </select>
                         </div>
-
-                        <!-- Suite -->
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">SUITE</label>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Suite</label>
                             <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#C4A77D] text-[#1C1C1C] appearance-none bg-white">
                                 <option>Executive 2-Bedroom</option>
                                 <option>Deluxe Studio</option>
@@ -223,40 +214,29 @@
                         </div>
                     </div>
 
-                    <button type="button" onclick="alert('Booking system integration here')" 
-                            class="w-full bg-[#C4A77D] text-white py-4 rounded-lg font-semibold text-lg hover:bg-[#B8956C] transition-all duration-300 mt-4">
+                    <button type="button" class="w-full bg-[#C4A77D] text-white py-4 rounded-lg font-bold uppercase tracking-widest hover:bg-[#B8956C] transition-all duration-300">
                         Check Availability & Book
                     </button>
 
                     <div class="flex justify-center gap-8 text-sm text-gray-500 pt-4">
-                        <span class="flex items-center gap-2">
-                            <i data-lucide="check" class="w-4 h-4 text-[#C4A77D]"></i>
-                            Best price guarantee
-                        </span>
-                        <span class="flex items-center gap-2">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-[#C4A77D]"></i>
-                            Secure payment
-                        </span>
+                        <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#C4A77D]"></i>Best price guarantee</span>
+                        <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-[#C4A77D]"></i>Secure payment</span>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Amenities Section -->
-    <section id="amenities" class="bg-[#1C1C1C] text-white py-20 px-6 lg:px-12">
+    <!-- Amenities Section - DARK -->
+    <section id="amenities" class="bg-[#1C1C1C] text-white py-24 px-6 lg:px-12">
         <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            <!-- Left Image -->
             <div class="aspect-[4/5] overflow-hidden rounded-lg">
-                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop" 
-                     alt="Interior" 
-                     class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop" alt="Amenities" class="w-full h-full object-cover">
             </div>
 
-            <!-- Right Content -->
             <div class="lg:pl-12">
-                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-12 leading-none">
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-12 leading-[0.95]">
                     Everything<br>You Need
                 </h2>
 
@@ -267,7 +247,7 @@
                             <i data-lucide="wifi" class="w-5 h-5 text-[#C4A77D]"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-base mb-1">High-speed Wi-Fi</h4>
+                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">High-speed Wi-Fi</h4>
                             <p class="text-gray-400 text-sm">Fiber-optic internet throughout</p>
                         </div>
                     </div>
@@ -277,7 +257,7 @@
                             <i data-lucide="tv" class="w-5 h-5 text-[#C4A77D]"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-base mb-1">Smart TV + Streaming</h4>
+                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Smart TV + Streaming</h4>
                             <p class="text-gray-400 text-sm">Netflix, YouTube & more</p>
                         </div>
                     </div>
@@ -287,7 +267,7 @@
                             <i data-lucide="chef-hat" class="w-5 h-5 text-[#C4A77D]"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-base mb-1">Fully Equipped Kitchen</h4>
+                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Fully Equipped Kitchen</h4>
                             <p class="text-gray-400 text-sm">Cookware, utensils & appliances</p>
                         </div>
                     </div>
@@ -297,8 +277,8 @@
                             <i data-lucide="zap" class="w-5 h-5 text-[#C4A77D]"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-base mb-1">Inverter & Solar Backup</h4>
-                            <p class="text-gray-400 text-sm">24/7 uninterrupted power</p>
+                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">24/7 Power</h4>
+                            <p class="text-gray-400 text-sm">Inverter & solar backup</p>
                         </div>
                     </div>
 
@@ -307,7 +287,7 @@
                             <i data-lucide="car" class="w-5 h-5 text-[#C4A77D]"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-base mb-1">Secure Parking</h4>
+                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Secure Parking</h4>
                             <p class="text-gray-400 text-sm">On-site parking space</p>
                         </div>
                     </div>
@@ -317,7 +297,7 @@
                             <i data-lucide="sparkles" class="w-5 h-5 text-[#C4A77D]"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-base mb-1">Daily Cleaning</h4>
+                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Daily Cleaning</h4>
                             <p class="text-gray-400 text-sm">On-request housekeeping</p>
                         </div>
                     </div>
@@ -327,7 +307,7 @@
                             <i data-lucide="wind" class="w-5 h-5 text-[#C4A77D]"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-base mb-1">Air Conditioning</h4>
+                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Air Conditioning</h4>
                             <p class="text-gray-400 text-sm">Split-unit AC in all rooms</p>
                         </div>
                     </div>
@@ -337,7 +317,7 @@
                             <i data-lucide="headset" class="w-5 h-5 text-[#C4A77D]"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-base mb-1">Concierge Support</h4>
+                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Concierge Support</h4>
                             <p class="text-gray-400 text-sm">24/7 guest assistance</p>
                         </div>
                     </div>
@@ -346,46 +326,38 @@
             </div>
         </div>
     </section>
-  <!-- Host Section -->
-<section id="host" class="bg-[#F5F3F0] py-24 px-6 lg:px-12">
-    <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        
-        <!-- Left: Host Image -->
-        <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" 
-                 alt="Your Host" 
-                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-        </div>
 
-        <!-- Right: Content -->
-        <div class="lg:pl-8">
-            <p class="text-[#C4A77D] uppercase tracking-[0.3em] text-xs font-bold mb-6">YOUR HOST</p>
+    <!-- Host Section -->
+    <section id="host" class="bg-[#F5F3F0] py-24 px-6 lg:px-12">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight mb-8 leading-[0.95]">
-                DESIGNED FOR CALM.<br>
-                BUILT FOR COMFORT.
-            </h2>
-            
-            <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                We built Abijo Sand Residence as a place to reset—clean lines, reliable power, 
-                and a team that cares. Every detail has been thoughtfully curated to ensure 
-                your stay is nothing short of exceptional.
-            </p>
-            
-            <p class="text-gray-600 text-lg leading-relaxed mb-10">
-                Whether you are here for business or leisure, our apartments provide the 
-                perfect sanctuary in the heart of Lekki. Experience luxury living with the 
-                warmth of home.
-            </p>
-            
-            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" 
-                    class="inline-flex items-center gap-3 px-6 py-3 border border-gray-300 rounded-full text-sm font-medium text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white transition-all">
-                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                Ask a Question
-            </button>
+            <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" alt="Your Host" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+
+            <div class="lg:pl-8">
+                <p class="text-[#C4A77D] uppercase tracking-[0.3em] text-xs font-bold mb-6">YOUR HOST</p>
+                
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight mb-8 leading-[0.95]">
+                    DESIGNED FOR CALM.<br>
+                    BUILT FOR COMFORT.
+                </h2>
+                
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    We built Abijo Sand Residence as a place to reset—clean lines, reliable power, and a team that cares. Every detail has been thoughtfully curated to ensure your stay is nothing short of exceptional.
+                </p>
+                
+                <p class="text-gray-600 text-lg leading-relaxed mb-10">
+                    Whether you are here for business or leisure, our apartments provide the perfect sanctuary in the heart of Lekki. Experience luxury living with the warmth of home.
+                </p>
+                
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="inline-flex items-center gap-3 px-6 py-3 border border-gray-300 rounded-full text-sm font-bold uppercase tracking-wide text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white transition-all">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    Ask a Question
+                </button>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Location/Neighborhood Section -->
     <section id="location" class="bg-[#E8E4DC]">
@@ -394,18 +366,19 @@
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#E8E4DC]"></div>
         </div>
 
-        <div class="px-6 lg:px-12 pb-20 -mt-20 relative z-10">
+        <div class="px-6 lg:px-12 pb-24 -mt-20 relative z-10">
             <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                 
                 <div>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-[#1C1C1C] uppercase tracking-tight mb-6">THE NEIGHBORHOOD</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-8 max-w-lg">
-                        Located in the serene Fidiso Estate, Abijo Sand Residence offers the perfect balance of tranquility 
-                        and accessibility. The property is strategically positioned to provide easy access to major business 
-                        districts, shopping centres, and entertainment hubs across Lekki and Victoria Island.
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight mb-6 leading-[0.95]">
+                        THE NEIGHBORHOOD
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8 max-w-lg">
+                        Located in the serene Fidiso Estate, Abijo Sand Residence offers the perfect balance of tranquility and accessibility. The property is strategically positioned to provide easy access to major business districts, shopping centres, and entertainment hubs across Lekki and Victoria Island.
                     </p>
-                    <a href="https://maps.google.com/?q=Abijo+Gra+Lekki+Lagos" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded text-xs font-medium hover:bg-[#1C1C1C] hover:text-white transition-all">
-                        <i data-lucide="map-pin" class="w-3 h-3"></i> Get Directions
+                    <a href="https://maps.google.com/?q=Abijo+Gra+Lekki+Lagos" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-gray-400 rounded text-xs font-bold uppercase tracking-wide hover:bg-[#1C1C1C] hover:text-white hover:border-[#1C1C1C] transition-all">
+                        <i data-lucide="map-pin" class="w-3 h-3"></i>
+                        Get Directions
                     </a>
                 </div>
 
@@ -414,12 +387,12 @@
                         <h3 class="text-[10px] uppercase tracking-widest text-[#C4A77D] font-bold mb-4">Business Districts</h3>
                         <div class="space-y-3">
                             <div class="flex justify-between items-center text-sm border-b border-gray-100 pb-2">
-                                <span>Lekki Phase 1</span>
-                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500">15 mins</span>
+                                <span class="font-semibold">Lekki Phase 1</span>
+                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500 font-bold">15 mins</span>
                             </div>
                             <div class="flex justify-between items-center text-sm">
-                                <span>Victoria Island</span>
-                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500">20 mins</span>
+                                <span class="font-semibold">Victoria Island</span>
+                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500 font-bold">20 mins</span>
                             </div>
                         </div>
                     </div>
@@ -428,12 +401,12 @@
                         <h3 class="text-[10px] uppercase tracking-widest text-[#C4A77D] font-bold mb-4">Leisure & Lifestyle</h3>
                         <div class="space-y-3">
                             <div class="flex justify-between items-center text-sm border-b border-gray-100 pb-2">
-                                <span>Elegushi Beach</span>
-                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500">25 mins</span>
+                                <span class="font-semibold">Elegushi Beach</span>
+                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500 font-bold">25 mins</span>
                             </div>
                             <div class="flex justify-between items-center text-sm">
-                                <span>Lakowe Golf Resort</span>
-                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500">15 mins</span>
+                                <span class="font-semibold">Lakowe Golf Resort</span>
+                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500 font-bold">15 mins</span>
                             </div>
                         </div>
                     </div>
@@ -442,16 +415,16 @@
                         <h3 class="text-[10px] uppercase tracking-widest text-[#C4A77D] font-bold mb-4">Shopping & Dining</h3>
                         <div class="space-y-3">
                             <div class="flex justify-between items-center text-sm border-b border-gray-100 pb-2">
-                                <span>Novare Mall (Shoprite)</span>
-                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500">10 mins</span>
+                                <span class="font-semibold">Novare Mall (Shoprite)</span>
+                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500 font-bold">10 mins</span>
                             </div>
                             <div class="flex justify-between items-center text-sm border-b border-gray-100 pb-2">
-                                <span>The Place Restaurant</span>
-                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500">10 mins</span>
+                                <span class="font-semibold">The Place Restaurant</span>
+                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500 font-bold">10 mins</span>
                             </div>
                             <div class="flex justify-between items-center text-sm">
-                                <span>Local Markets</span>
-                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500">5 mins</span>
+                                <span class="font-semibold">Local Markets</span>
+                                <span class="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-500 font-bold">5 mins</span>
                             </div>
                         </div>
                     </div>
@@ -460,18 +433,17 @@
         </div>
     </section>
 
-       </section>
-
-    <!-- Reviews Section - LIGHT -->
+    <!-- Reviews Section -->
     <section id="reviews" class="bg-[#F5F3F0] py-24 px-6 lg:px-12">
         <div class="max-w-[1400px] mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-6xl font-black text-[#1C1C1C] uppercase tracking-tight mb-4">Word on the Street</h2>
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight mb-4">
+                    Word on the Street
+                </h2>
                 <p class="text-gray-500 text-lg">What our guests say about their stay</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
                 <div class="bg-white p-8 rounded-lg shadow-sm">
                     <div class="flex text-[#C4A77D] mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -484,13 +456,12 @@
                     <div class="flex items-center">
                         <div class="w-10 h-10 bg-[#1C1C1C] rounded-full flex items-center justify-center text-white font-bold text-xs">JD</div>
                         <div class="ml-3">
-                            <h4 class="font-semibold text-sm text-[#1C1C1C]">James D.</h4>
+                            <h4 class="font-bold text-sm text-[#1C1C1C]">James D.</h4>
                             <p class="text-xs text-gray-400">Business Traveler • Jan 2026</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Review 2 -->
                 <div class="bg-white p-8 rounded-lg shadow-sm">
                     <div class="flex text-[#C4A77D] mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -503,13 +474,12 @@
                     <div class="flex items-center">
                         <div class="w-10 h-10 bg-[#1C1C1C] rounded-full flex items-center justify-center text-white font-bold text-xs">SA</div>
                         <div class="ml-3">
-                            <h4 class="font-semibold text-sm text-[#1C1C1C]">Sarah A.</h4>
+                            <h4 class="font-bold text-sm text-[#1C1C1C]">Sarah A.</h4>
                             <p class="text-xs text-gray-400">Family Visit • Dec 2025</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Review 3 -->
                 <div class="bg-white p-8 rounded-lg shadow-sm">
                     <div class="flex text-[#C4A77D] mb-4">
                         <i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -522,7 +492,7 @@
                     <div class="flex items-center">
                         <div class="w-10 h-10 bg-[#1C1C1C] rounded-full flex items-center justify-center text-white font-bold text-xs">OK</div>
                         <div class="ml-3">
-                            <h4 class="font-semibold text-sm text-[#1C1C1C]">Olumide K.</h4>
+                            <h4 class="font-bold text-sm text-[#1C1C1C]">Olumide K.</h4>
                             <p class="text-xs text-gray-400">Diaspora Visit • Nov 2025</p>
                         </div>
                     </div>
@@ -531,13 +501,14 @@
         </div>
     </section>
 
-    <!-- Contact / Let's Talk - DARK -->
+    <!-- Contact / Let's Talk -->
     <section id="contact" class="bg-[#1C1C1C] text-white py-24 px-6 lg:px-12">
         <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
             
-            <!-- Left Side -->
             <div>
-                <h2 class="text-6xl md:text-7xl font-black uppercase tracking-tight mb-8 leading-none">LET'S<br>TALK</h2>
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-8 leading-[0.95]">
+                    LET'S<br>TALK
+                </h2>
                 <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-md">
                     Have questions? We're here to help. Reach out to us through any of the channels below.
                 </p>
@@ -547,21 +518,21 @@
                         <div class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-[#C4A77D] transition-colors">
                             <i data-lucide="message-circle" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-lg">WhatsApp Us</span>
+                        <span class="text-lg font-semibold">WhatsApp Us</span>
                     </a>
                     
                     <a href="mailto:hello@abijosand.com" class="flex items-center gap-4 group">
                         <div class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-[#C4A77D] transition-colors">
                             <i data-lucide="mail" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-lg">Email Us</span>
+                        <span class="text-lg font-semibold">Email Us</span>
                     </a>
                     
                     <a href="tel:+2349012345678" class="flex items-center gap-4 group">
                         <div class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-[#C4A77D] transition-colors">
                             <i data-lucide="phone" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-lg">Call Us</span>
+                        <span class="text-lg font-semibold">Call Us</span>
                     </a>
                 </div>
 
@@ -573,24 +544,20 @@
                 </div>
             </div>
 
-            <!-- Right Side - Form -->
             <div class="bg-[#F5F3F0] p-8 md:p-12 rounded-lg">
-                <h3 class="text-[#1C1C1C] text-2xl font-bold mb-8">Send a Message</h3>
+                <h3 class="text-[#1C1C1C] text-2xl font-bold mb-8 uppercase tracking-wide">Send a Message</h3>
                 <form onsubmit="event.preventDefault(); alert('Message sent!'); this.reset();" class="space-y-6">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Name</label>
-                        <input type="text" placeholder="Your name" required 
-                               class="w-full p-4 border border-gray-200 rounded-lg bg-white text-[#1C1C1C] placeholder-gray-400 focus:outline-none focus:border-[#C4A77D]">
+                        <input type="text" placeholder="Your name" required class="w-full p-4 border border-gray-200 rounded-lg bg-white text-[#1C1C1C] placeholder-gray-400 focus:outline-none focus:border-[#C4A77D]">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Email</label>
-                        <input type="email" placeholder="your@email.com" required 
-                               class="w-full p-4 border border-gray-200 rounded-lg bg-white text-[#1C1C1C] placeholder-gray-400 focus:outline-none focus:border-[#C4A77D]">
+                        <input type="email" placeholder="your@email.com" required class="w-full p-4 border border-gray-200 rounded-lg bg-white text-[#1C1C1C] placeholder-gray-400 focus:outline-none focus:border-[#C4A77D]">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Message</label>
-                        <textarea placeholder="How can we help?" rows="5" required 
-                                  class="w-full p-4 border border-gray-200 rounded-lg bg-white text-[#1C1C1C] placeholder-gray-400 focus:outline-none focus:border-[#C4A77D] resize-none"></textarea>
+                        <textarea placeholder="How can we help?" rows="5" required class="w-full p-4 border border-gray-200 rounded-lg bg-white text-[#1C1C1C] placeholder-gray-400 focus:outline-none focus:border-[#C4A77D] resize-none"></textarea>
                     </div>
                     <button type="submit" class="w-full bg-[#C4A77D] text-white py-4 rounded-lg text-sm font-bold uppercase tracking-wider hover:bg-[#B8956C] transition">
                         Send Message
@@ -600,13 +567,13 @@
         </div>
     </section>
 
-    <!-- Footer Bottom -->
+    <!-- Footer -->
     <footer class="bg-[#1C1C1C] text-white py-8 px-6 lg:px-12 border-t border-gray-800">
         <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-sm text-gray-500">&copy; 2026 Abijo Sand Residence. All rights reserved.</p>
+            <p class="text-sm text-gray-500 uppercase tracking-wide">&copy; 2026 Abijo Sand Residence. All rights reserved.</p>
             <div class="flex gap-8 text-sm text-gray-500">
-                <a href="#" class="hover:text-white transition-colors">Privacy</a>
-                <a href="#" class="hover:text-white transition-colors">Terms</a>
+                <a href="#" class="hover:text-white transition-colors uppercase tracking-wide text-xs font-bold">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors uppercase tracking-wide text-xs font-bold">Terms</a>
             </div>
         </div>
     </footer>

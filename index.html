@@ -870,70 +870,72 @@
     </section>
 
     <!-- Contact / Let's Talk -->
-    <section id="contact" class="bg-[#1C1C1C] text-white py-24 px-6 lg:px-12">
-        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <!-- Contact Section -->
+<section id="contact" class="py-20 lg:py-32 bg-[#1C1C1C] text-white">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
+            <!-- Left Content -->
             <div>
-                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-8 leading-[0.95]">
-                    LET'S<br>TALK
+                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tight mb-6 leading-[0.95]">
+                    Ready to<br>
+                    <span class="text-[#C4A77D]">Book Your Stay?</span>
                 </h2>
-                <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-md">
-                    Have questions? We're here to help. Reach out to us through any of the channels below.
+                <p class="text-gray-400 text-lg mb-8 max-w-md">
+                    Get in touch with us directly for instant booking confirmation and special rates. We're available 24/7 to assist you.
                 </p>
                 
-                <div class="space-y-6 mb-12">
-                    <a href="https://wa.me/2349012345678" target="_blank" class="flex items-center gap-4 group">
-                        <div class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-[#C4A77D] transition-colors">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-lg font-semibold">WhatsApp Us</span>
-                    </a>
-                    
-                    <a href="mailto:hello@abijosand.com" class="flex items-center gap-4 group">
-                        <div class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-[#C4A77D] transition-colors">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-lg font-semibold">Email Us</span>
-                    </a>
-                    
-                    <a href="tel:+2349012345678" class="flex items-center gap-4 group">
-                        <div class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-[#C4A77D] transition-colors">
-                            <i data-lucide="phone" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-lg font-semibold">Call Us</span>
-                    </a>
-                </div>
-
-                <div class="border-t border-gray-800 pt-8">
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        No 1 Lawyer Close, Fidiso Estate<br>
-                        Abijo, Lekki, Lagos, Nigeria
-                    </p>
-                </div>
+                <!-- Email Link -->
+                <a href="mailto:blendedbusinesshub@gmail.com" class="inline-flex items-center gap-3 text-lg hover:text-[#C4A77D] transition-colors mb-6">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                    blendedbusinesshub@gmail.com
+                </a>
             </div>
 
-            <div class="bg-[#F5F3F0] p-8 md:p-12 rounded-lg">
-                <h3 class="text-[#1C1C1C] text-2xl font-bold mb-8 uppercase tracking-wide">Send a Message</h3>
-                <form onsubmit="event.preventDefault(); alert('Message sent!'); this.reset();" class="space-y-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Name</label>
-                        <input type="text" placeholder="Your name" required class="w-full p-4 border border-gray-200 rounded-lg bg-white text-[#1C1C1C] placeholder-gray-400 focus:outline-none focus:border-[#C4A77D]">
+            <!-- Right: Contact Options -->
+            <div class="space-y-4">
+                
+                <!-- WhatsApp Options -->
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10">
+                    <h3 class="text-sm uppercase tracking-widest text-[#C4A77D] font-black mb-4 flex items-center gap-2">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        WhatsApp Chat
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-4">Choose a number to chat with:</p>
+                    
+                    <div class="space-y-3">
+                        <a href="https://wa.me/2348034035975" target="_blank" class="flex items-center justify-between p-4 bg-white/5 rounded-lg hover:bg-[#C4A77D] hover:text-white transition-all group">
+                            <span class="font-semibold">Line 1</span>
+                            <span class="text-sm">+234 803 403 5975</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                        
+                        <a href="https://wa.me/2348100639268" target="_blank" class="flex items-center justify-between p-4 bg-white/5 rounded-lg hover:bg-[#C4A77D] hover:text-white transition-all group">
+                            <span class="font-semibold">Line 2</span>
+                            <span class="text-sm">+234 810 063 9268</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Email</label>
-                        <input type="email" placeholder="your@email.com" required class="w-full p-4 border border-gray-200 rounded-lg bg-white text-[#1C1C1C] placeholder-gray-400 focus:outline-none focus:border-[#C4A77D]">
+                </div>
+
+                <!-- Email Option -->
+                <a href="mailto:blendedbusinesshub@gmail.com" class="block bg-[#C4A77D] p-6 rounded-xl hover:bg-white hover:text-[#1C1C1C] transition-all group">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-sm uppercase tracking-widest font-black mb-1 flex items-center gap-2">
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                                Send Email
+                            </h3>
+                            <p class="text-sm opacity-80">blendedbusinesshub@gmail.com</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Message</label>
-                        <textarea placeholder="How can we help?" rows="5" required class="w-full p-4 border border-gray-200 rounded-lg bg-white text-[#1C1C1C] placeholder-gray-400 focus:outline-none focus:border-[#C4A77D] resize-none"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-[#C4A77D] text-white py-4 rounded-lg text-sm font-bold uppercase tracking-wider hover:bg-[#B8956C] transition">
-                        Send Message
-                    </button>
-                </form>
+                </a>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-[#1C1C1C] text-white py-8 px-6 lg:px-12 border-t border-gray-800">

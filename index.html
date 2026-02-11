@@ -12,7 +12,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -26,7 +26,7 @@
                         sand: '#F5F0E8',
                         taupe: '#C4B7A6',
                         charcoal: '#2C2C2C',
-                        gold: '#B8956C', // Matching your screenshot's gold
+                        gold: '#B8956C',
                         goldhover: '#9A7B56',
                     },
                     fontFamily: {
@@ -40,21 +40,17 @@
 
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #FAF8F5; }
-        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-serif { font-family: 'Playfair Display', 'serif'; }
         
-        /* Smooth fade in */
         .fade-in { animation: fadeIn 1s ease-in; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
-        /* Image hover effect */
-        .gallery-img { transition: transform 0.5s ease, filter 0.3s ease; }
-        .gallery-item:hover .gallery-img { transform: scale(1.05); filter: brightness(1.1); }
+        .gallery-img { transition: transform 0.5s ease; }
+        .gallery-item:hover .gallery-img { transform: scale(1.05); }
         
-        /* Scroll reveal */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
-        /* Smooth scroll */
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -64,45 +60,46 @@
     <nav id="navbar" class="fixed w-full bg-cream/95 backdrop-blur-md z-50 border-b border-black/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div class="flex justify-between items-center h-24">
-                <!-- Logo: ABIJO SAND (black) RESIDENCE (gold) -->
                 <a href="#" class="font-serif text-2xl tracking-wider">
                     <span class="text-charcoal font-semibold">ABIJO SAND</span>
                     <span class="text-gold font-semibold ml-2">RESIDENCE</span>
                 </a>
                 
-                <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center space-x-8 lg:space-x-10">
+                    <a href="#gallery" class="text-sm uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Gallery</a>
                     <a href="#suites" class="text-sm uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Suites</a>
                     <a href="#amenities" class="text-sm uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Amenities</a>
                     <a href="#location" class="text-sm uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Location</a>
                     <a href="#reviews" class="text-sm uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Reviews</a>
                     <a href="#contact" class="text-sm uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Contact</a>
-                    <button onclick="scrollToBooking()" class="bg-gold text-white px-8 py-3 rounded text-sm uppercase tracking-widest hover:bg-goldhover transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Book Now</button>
+                    <button onclick="scrollToBooking()" class="bg-gold text-white px-8 py-3 rounded text-sm uppercase tracking-widest hover:bg-goldhover transition shadow-md">Book Now</button>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-charcoal" onclick="toggleMenu()">
+                <button class="md:hidden" onclick="toggleMenu()">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-black/5 absolute w-full">
-            <div class="px-6 py-6 space-y-4 shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-black/5 absolute w-full shadow-lg">
+            <div class="px-6 py-6 space-y-4">
+                <a href="#gallery" onclick="toggleMenu()" class="block py-2 text-sm uppercase tracking-widest text-gray-600">Gallery</a>
                 <a href="#suites" onclick="toggleMenu()" class="block py-2 text-sm uppercase tracking-widest text-gray-600">Suites</a>
                 <a href="#amenities" onclick="toggleMenu()" class="block py-2 text-sm uppercase tracking-widest text-gray-600">Amenities</a>
                 <a href="#location" onclick="toggleMenu()" class="block py-2 text-sm uppercase tracking-widest text-gray-600">Location</a>
                 <a href="#reviews" onclick="toggleMenu()" class="block py-2 text-sm uppercase tracking-widest text-gray-600">Reviews</a>
                 <a href="#contact" onclick="toggleMenu()" class="block py-2 text-sm uppercase tracking-widest text-gray-600">Contact</a>
-                <button onclick="toggleMenu(); scrollToBooking();" class="w-full bg-gold text-white py-3 rounded text-sm uppercase tracking-widest mt-4">Book Now</button>
+                <button onclick="toggleMenu(); scrollToBooking();" class="w-full bg-gold text-white py-3 rounded text-sm uppercase tracking-widest">Book Now</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-24 min-h-[80vh] flex items-center justify-center bg-sand">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center py-20 reveal active">
+    <section class="relative pt-24 min-h-screen flex items-center justify-center bg-sand">
+        <div class="absolute inset-0 z-0">
+            <img src="Public/images/hero-portrait.jpg" alt="Luxury Interior" class="w-full h-full object-cover opacity-40">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center py-20 reveal active">
             <p class="text-gold uppercase tracking-[0.3em] text-sm mb-6 font-medium">Welcome to</p>
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 text-charcoal leading-tight">
                 A Gallery<br>Of Rooms
@@ -117,7 +114,7 @@
         </div>
     </section>
 
-    <!-- Gallery Grid Section (Like your screenshot!) -->
+    <!-- Gallery Grid Section -->
     <section id="gallery" class="py-20 bg-cream">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div class="text-center mb-16 reveal">
@@ -125,48 +122,47 @@
                 <p class="text-gray-600 max-w-2xl mx-auto">Every space is thoughtfully designed with warm tones, natural light, and premium finishes.</p>
             </div>
 
-            <!-- 3x2 Grid Layout -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
                 <!-- Row 1 -->
-                <div class="gallery-item overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group">
-                    <img src="images/gallery-1.jpg" alt="Master Bedroom" class="gallery-img w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group">
+                    <img src="Public/images/gallery-bedroom-wide.jpg" alt="Master Bedroom" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
                         <span class="text-white font-serif text-xl">Master Bedroom</span>
                     </div>
                 </div>
                 
-                <div class="gallery-item overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group relative">
-                    <img src="images/gallery-2.jpg" alt="Living Area" class="gallery-img w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group">
+                    <img src="Public/images/gallery-living-room.jpg" alt="Living Area" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
                         <span class="text-white font-serif text-xl">Living Area</span>
                     </div>
                 </div>
                 
-                <div class="gallery-item overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group relative">
-                    <img src="images/gallery-3.jpg" alt="Bedroom Detail" class="gallery-img w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group">
+                    <img src="Public/images/gallery-bedroom-detail.jpg" alt="Bedroom Detail" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
                         <span class="text-white font-serif text-xl">Bedroom Detail</span>
                     </div>
                 </div>
 
                 <!-- Row 2 -->
-                <div class="gallery-item overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group relative">
-                    <img src="images/gallery-4.jpg" alt="Dining Space" class="gallery-img w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-end p-6 opacity-0 group-hover:opacity-100">
-                        <span class="text-white font-serif text-xl">Dining Space</span>
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group">
+                    <img src="Public/images/gallery-living-wide.jpg" alt="Living Space" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                        <span class="text-white font-serif text-xl">Living Space</span>
                     </div>
                 </div>
                 
-                <div class="gallery-item overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group relative">
-                    <img src="images/gallery-5.jpg" alt="Lounge" class="gallery-img w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group">
+                    <img src="Public/images/gallery-sofa.jpg" alt="Lounge" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
                         <span class="text-white font-serif text-xl">Lounge</span>
                     </div>
                 </div>
                 
-                <div class="gallery-item overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group relative">
-                    <img src="images/gallery-6.jpg" alt="Interior Detail" class="gallery-img w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-end p-6 opacity-0 group-hover:opacity-100">
+                <div class="gallery-item relative overflow-hidden rounded-lg shadow-md aspect-[4/3] cursor-pointer group">
+                    <img src="Public/images/gallery-bedside.jpg" alt="Interior Detail" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
                         <span class="text-white font-serif text-xl">Interior Detail</span>
                     </div>
                 </div>
@@ -202,18 +198,18 @@
                         </select>
                     </div>
                     <div class="flex items-end">
-                        <button onclick="checkAvailability()" class="w-full bg-gold text-white py-3 rounded uppercase tracking-widest text-sm hover:bg-goldhover transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Check Availability</button>
+                        <button onclick="checkAvailability()" class="w-full bg-gold text-white py-3 rounded uppercase tracking-widest text-sm hover:bg-goldhover transition shadow-md">Check Availability</button>
                     </div>
                 </div>
                 <div class="flex justify-center gap-6 mt-6 text-sm text-gray-500">
                     <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Best price guarantee</span>
-                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-gold"></i> Secure payment</span>
+                    <span class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-gold"></i> Secure payment</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Apartments/Suites Section -->
+    <!-- Suites Section -->
     <section id="suites" class="py-24 bg-cream reveal">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div class="text-center mb-16">
@@ -222,29 +218,34 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Executive -->
+                <!-- Executive Suite -->
                 <div class="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
                     <div class="relative h-72 overflow-hidden">
-                        <img src="images/gallery-2.jpg" alt="Executive Suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute top-4 right-4 bg-gold text-white px-4 py-1 text-xs uppercase tracking-widest rounded-full shadow-md">Most Popular</div>
+                        <img src="Public/images/executive-suite.jpg" alt="Executive Suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4 bg-gold text-white px-3 py-1 text-xs uppercase tracking-widest rounded">Premium</div>
                     </div>
                     <div class="p-8">
-                        <h3 class="font-serif text-2xl mb-3 text-charcoal">One Bedroom Executive</h3>
-                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">Spacious sanctuary with separate living area, perfect for extended stays and business travelers.</p>
+                        <h3 class="font-serif text-2xl mb-3 text-charcoal">Executive 2-Bedroom</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">A sanctuary of sophistication where every detail whispers luxury. Two bedrooms, panoramic views, and premium furnishings.</p>
                         
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>King-size bed</li>
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>Fully equipped kitchen</li>
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>Dedicated workspace</li>
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>65m²</li>
-                        </ul>
+                        <div class="flex items-center gap-4 mb-6 text-sm text-gray-600">
+                            <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4"></i> Up to 4 guests</span>
+                            <span>85 sqm</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">King Bed</span>
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Full Kitchen</span>
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Washer</span>
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Balcony</span>
+                        </div>
 
                         <div class="flex items-center justify-between pt-6 border-t border-gray-100">
                             <div>
-                                <span class="text-2xl font-semibold text-charcoal">₦85,000</span>
+                                <span class="text-2xl font-semibold text-charcoal">₦130,000</span>
                                 <span class="text-gray-500 text-sm">/night</span>
                             </div>
-                            <button onclick="openModal('executive')" class="bg-charcoal text-white px-6 py-2.5 rounded text-sm uppercase tracking-widest hover:bg-gray-800 transition shadow-md">Book Now</button>
+                            <button onclick="openModal('executive')" class="bg-charcoal text-white px-6 py-2.5 rounded text-sm uppercase tracking-widest hover:bg-gray-800 transition">Book Now</button>
                         </div>
                     </div>
                 </div>
@@ -252,51 +253,63 @@
                 <!-- Deluxe Studio -->
                 <div class="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
                     <div class="relative h-72 overflow-hidden">
-                        <img src="images/gallery-5.jpg" alt="Deluxe Studio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Public/images/deluxe-studio.jpg" alt="Deluxe Studio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4 bg-charcoal text-white px-3 py-1 text-xs uppercase tracking-widest rounded">Most Popular</div>
                     </div>
                     <div class="p-8">
                         <h3 class="font-serif text-2xl mb-3 text-charcoal">Deluxe Studio</h3>
-                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">Intimate luxury with smart layout and premium finishes. Ideal for solo travelers or couples.</p>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">Where modern elegance meets uncompromising comfort. Perfect for the discerning business traveler seeking style and function.</p>
                         
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>Queen-size bed</li>
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>Kitchenette</li>
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>City views</li>
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>45m²</li>
-                        </ul>
+                        <div class="flex items-center gap-4 mb-6 text-sm text-gray-600">
+                            <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4"></i> Up to 2 guests</span>
+                            <span>45 sqm</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Queen Bed</span>
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Kitchenette</span>
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Washer</span>
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Work Desk</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+                            <div>
+                                <span class="text-2xl font-semibold text-charcoal">₦85,000</span>
+                                <span class="text-gray-500 text-sm">/night</span>
+                            </div>
+                            <button onclick="openModal('deluxe')" class="bg-charcoal text-white px-6 py-2.5 rounded text-sm uppercase tracking-widest hover:bg-gray-800 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standard Studio -->
+                <div class="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="Public/images/standard-studio.jpg" alt="Standard Studio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4 bg-white text-charcoal px-3 py-1 text-xs uppercase tracking-widest rounded border border-gray-200">Smart Choice</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-serif text-2xl mb-3 text-charcoal">Standard Studio</h3>
+                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">Intimate luxury that does not compromise. Every essential thoughtfully curated, every comfort carefully considered.</p>
+                        
+                        <div class="flex items-center gap-4 mb-6 text-sm text-gray-600">
+                            <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4"></i> Up to 2 guests</span>
+                            <span>35 sqm</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Queen Bed</span>
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Kitchenette</span>
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Smart TV</span>
+                            <span class="px-3 py-1 bg-sand text-xs rounded-full">Free WiFi</span>
+                        </div>
 
                         <div class="flex items-center justify-between pt-6 border-t border-gray-100">
                             <div>
                                 <span class="text-2xl font-semibold text-charcoal">₦65,000</span>
                                 <span class="text-gray-500 text-sm">/night</span>
                             </div>
-                            <button onclick="openModal('deluxe')" class="bg-charcoal text-white px-6 py-2.5 rounded text-sm uppercase tracking-widest hover:bg-gray-800 transition shadow-md">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Premium Studio -->
-                <div class="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
-                    <div class="relative h-72 overflow-hidden">
-                        <img src="images/gallery-6.jpg" alt="Premium Studio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <h3 class="font-serif text-2xl mb-3 text-charcoal">Premium Studio</h3>
-                        <p class="text-gray-600 text-sm mb-6 leading-relaxed">Modern elegance with garden views and serene atmosphere. Perfect blend of comfort and style.</p>
-                        
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>Queen-size bed</li>
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>Full kitchen</li>
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>Garden terrace</li>
-                            <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="w-4 h-4 text-gold mr-3"></i>50m²</li>
-                        </ul>
-
-                        <div class="flex items-center justify-between pt-6 border-t border-gray-100">
-                            <div>
-                                <span class="text-2xl font-semibold text-charcoal">₦70,000</span>
-                                <span class="text-gray-500 text-sm">/night</span>
-                            </div>
-                            <button onclick="openModal('standard')" class="bg-charcoal text-white px-6 py-2.5 rounded text-sm uppercase tracking-widest hover:bg-gray-800 transition shadow-md">Book Now</button>
+                            <button onclick="openModal('standard')" class="bg-charcoal text-white px-6 py-2.5 rounded text-sm uppercase tracking-widest hover:bg-gray-800 transition">Book Now</button>
                         </div>
                     </div>
                 </div>
@@ -304,132 +317,187 @@
         </div>
     </section>
 
-    <!-- Amenities -->
-    <section id="amenities" class="py-24 bg-sand reveal">
-        <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-            <h2 class="font-serif text-4xl md:text-5xl text-center mb-16 text-charcoal">Everything You Need</h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                        <i data-lucide="wifi" class="w-7 h-7 text-gold"></i>
-                    </div>
-                    <h4 class="font-semibold mb-1 text-charcoal">High-speed Wi-Fi</h4>
-                    <p class="text-sm text-gray-600">Fiber-optic</p>
-                </div>
-                <div class="text-center group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                        <i data-lucide="tv" class="w-7 h-7 text-gold"></i>
-                    </div>
-                    <h4 class="font-semibold mb-1 text-charcoal">Smart TV</h4>
-                    <p class="text-sm text-gray-600">Netflix & YouTube</p>
-                </div>
-                <div class="text-center group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                        <i data-lucide="utensils" class="w-7 h-7 text-gold"></i>
-                    </div>
-                    <h4 class="font-semibold mb-1 text-charcoal">Full Kitchen</h4>
-                    <p class="text-sm text-gray-600">All appliances</p>
-                </div>
-                <div class="text-center group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                        <i data-lucide="zap" class="w-7 h-7 text-gold"></i>
-                    </div>
-                    <h4 class="font-semibold mb-1 text-charcoal">24/7 Power</h4>
-                    <p class="text-sm text-gray-600">Solar backup</p>
-                </div>
-                <div class="text-center group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                        <i data-lucide="car" class="w-7 h-7 text-gold"></i>
-                    </div>
-                    <h4 class="font-semibold mb-1 text-charcoal">Parking</h4>
-                    <p class="text-sm text-gray-600">Secure on-site</p>
-                </div>
-                <div class="text-center group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                        <i data-lucide="sparkles" class="w-7 h-7 text-gold"></i>
-                    </div>
-                    <h4 class="font-semibold mb-1 text-charcoal">Cleaning</h4>
-                    <p class="text-sm text-gray-600">Daily service</p>
-                </div>
-                <div class="text-center group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                        <i data-lucide="wind" class="w-7 h-7 text-gold"></i>
-                    </div>
-                    <h4 class="font-semibold mb-1 text-charcoal">AC</h4>
-                    <p class="text-sm text-gray-600">All rooms</p>
-                </div>
-                <div class="text-center group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                        <i data-lucide="phone" class="w-7 h-7 text-gold"></i>
-                    </div>
-                    <h4 class="font-semibold mb-1 text-charcoal">Concierge</h4>
-                    <p class="text-sm text-gray-600">24/7 support</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews -->
-    <section id="reviews" class="py-24 bg-cream reveal">
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-24 bg-[#1a1a1a] text-white reveal">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <h2 class="font-serif text-4xl md:text-5xl text-center mb-16 text-charcoal">Word on the Street</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-sand p-8 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover:-translate-y-1">
-                    <div class="flex text-gold mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic leading-relaxed">"Exceptional service and beautiful apartment. The attention to detail is remarkable. Perfect for my business trip - quiet, secure, and fully equipped."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-charcoal text-white rounded-full flex items-center justify-center font-semibold mr-4 text-sm">JD</div>
-                        <div>
-                            <h4 class="font-semibold text-charcoal">James D.</h4>
-                            <p class="text-sm text-gray-500">Business Traveler</p>
-                        </div>
-                    </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative h-[600px] overflow-hidden rounded-lg">
+                    <img src="Public/images/amenities-room.jpg" alt="Amenities" class="w-full h-full object-cover">
                 </div>
-
-                <div class="bg-sand p-8 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover:-translate-y-1">
-                    <div class="flex text-gold mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic leading-relaxed">"Stayed here with my family for the holidays. The executive suite was spacious and immaculate. The kitchen had everything we needed. Felt like home!"</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-charcoal text-white rounded-full flex items-center justify-center font-semibold mr-4 text-sm">SA</div>
-                        <div>
-                            <h4 class="font-semibold text-charcoal">Sarah A.</h4>
-                            <p class="text-sm text-gray-500">Family Vacation</p>
+                
+                <div>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-12 text-white">Everything You Need</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="wifi" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">High-speed Wi-Fi</h4>
+                                <p class="text-sm text-gray-400">Fiber-optic internet throughout</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="bg-sand p-8 rounded-lg shadow-sm hover:shadow-md transition duration-300 hover:-translate-y-1">
-                    <div class="flex text-gold mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic leading-relaxed">"Coming from London, I wanted somewhere reliable and comfortable. Abijo Sand exceeded all expectations. The WiFi was fast, power was constant, and staff was helpful."</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-charcoal text-white rounded-full flex items-center justify-center font-semibold mr-4 text-sm">OK</div>
-                        <div>
-                            <h4 class="font-semibold text-charcoal">Olumide K.</h4>
-                            <p class="text-sm text-gray-500">Diaspora Visit</p>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="tv" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Smart TV + Streaming</h4>
+                                <p class="text-sm text-gray-400">Netflix, YouTube & more</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="chef-hat" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Fully Equipped Kitchen</h4>
+                                <p class="text-sm text-gray-400">Cookware, utensils & appliances</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="battery-charging" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Inverter & Solar Backup</h4>
+                                <p class="text-sm text-gray-400">24/7 uninterrupted power</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="car" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Secure Parking</h4>
+                                <p class="text-sm text-gray-400">On-site parking space</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Daily Cleaning</h4>
+                                <p class="text-sm text-gray-400">On-request housekeeping</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="wind" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Air Conditioning</h4>
+                                <p class="text-sm text-gray-400">Split-unit AC in all rooms</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="headphones" class="w-5 h-5 text-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Concierge Support</h4>
+                                <p class="text-sm text-gray-400">24/7 guest assistance</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Location Section - THE NEIGHBORHOOD (Updated Layout) -->
+    <section id="location" class="py-24 bg-sand reveal">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <!-- Map Strip Image -->
+            <div class="relative h-[300px] overflow-hidden rounded-lg mb-16">
+                <img src="Public/images/location-strip.jpg" alt="Location Map" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Left Side: Title and Description -->
+                <div>
+                    <h2 class="text-5xl md:text-6xl font-bold uppercase mb-8 text-charcoal tracking-tight">The Neighborhood</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8 max-w-xl">
+                        Located in the serene Fidiso Estate, Abijo Sand Residence offers the perfect balance of tranquility and accessibility. The property is strategically positioned to provide easy access to major business districts, shopping centres, and entertainment hubs across Lekki and Victoria Island.
+                    </p>
+                    <button class="inline-flex items-center gap-2 border border-gray-300 bg-white text-charcoal px-6 py-3 rounded-lg hover:bg-charcoal hover:text-white transition group shadow-sm">
+                        <i data-lucide="map-pin" class="w-5 h-5 group-hover:text-white text-charcoal"></i>
+                        <span class="font-medium">Get Directions</span>
+                    </button>
+                </div>
+
+                <!-- Right Side: Info Cards -->
+                <div class="space-y-6">
+                    <!-- Business Districts -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                        <h4 class="text-gold uppercase tracking-widest text-sm font-bold mb-6">Business Districts</h4>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                                <span class="text-lg text-charcoal">Lekki Phase 1</span>
+                                <span class="text-sm bg-gray-100 px-3 py-1 rounded text-gray-600 font-medium">15 mins</span>
+                            </li>
+                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                                <span class="text-lg text-charcoal">Victoria Island</span>
+                                <span class="text-sm bg-gray-100 px-3 py-1 rounded text-gray-600 font-medium">20 mins</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Leisure & Lifestyle -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                        <h4 class="text-gold uppercase tracking-widest text-sm font-bold mb-6">Leisure & Lifestyle</h4>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                                <span class="text-lg text-charcoal">Elegushi Beach</span>
+                                <span class="text-sm bg-gray-100 px-3 py-1 rounded text-gray-600 font-medium">25 mins</span>
+                            </li>
+                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                                <span class="text-lg text-charcoal">Lakowe Golf Resort</span>
+                                <span class="text-sm bg-gray-100 px-3 py-1 rounded text-gray-600 font-medium">15 mins</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Shopping & Dining -->
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                        <h4 class="text-gold uppercase tracking-widest text-sm font-bold mb-6">Shopping & Dining</h4>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                                <span class="text-lg text-charcoal">Novare Mall (Shoprite)</span>
+                                <span class="text-sm bg-gray-100 px-3 py-1 rounded text-gray-600 font-medium">10 mins</span>
+                            </li>
+                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                                <span class="text-lg text-charcoal">The Place Restaurant</span>
+                                <span class="text-sm bg-gray-100 px-3 py-1 rounded text-gray-600 font-medium">10 mins</span>
+                            </li>
+                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                                <span class="text-lg text-charcoal">Local Markets</span>
+                                <span class="text-sm bg-gray-100 px-3 py-1 rounded text-gray-600 font-medium">5 mins</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-32 bg-fixed bg-cover bg-center" style="background-image: url('Public/images/final-cta-room.jpg');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white reveal">
+            <h2 class="font-serif text-5xl md:text-6xl mb-6">Book Your Stay</h2>
+            <p class="text-xl mb-10 opacity-90">Instant confirmation. Flexible arrival. 24/7 support.</p>
+            <button onclick="scrollToBooking()" class="bg-gold text-white px-12 py-4 rounded uppercase tracking-widest font-semibold hover:bg-goldhover transition text-lg">Book Now</button>
         </div>
     </section>
 
@@ -438,50 +506,29 @@
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span class="text-gold uppercase tracking-widest text-sm font-semibold">Get in Touch</span>
-                    <h2 class="font-serif text-4xl md:text-5xl mt-4 mb-6">Book Your Stay</h2>
-                    <p class="text-gray-400 mb-8 leading-relaxed">Ready to experience luxury living in Lekki? Contact us directly via WhatsApp or fill out the form and we'll get back to you within 24 hours.</p>
-                    
-                    <div class="space-y-4 mb-8">
-                        <a href="https://wa.me/234XXXXXXXXXX" class="flex items-center gap-4 text-white hover:text-gold transition group">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-gold transition">
-                                <i data-lucide="message-circle" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-400">WhatsApp</p>
-                                <p class="font-semibold">+234 XXX XXX XXXX</p>
-                            </div>
-                        </a>
-                        <a href="mailto:hello@abijosand.com" class="flex items-center gap-4 text-white hover:text-gold transition group">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-gold transition">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-400">Email</p>
-                                <p class="font-semibold">hello@abijosand.com</p>
-                            </div>
-                        </a>
-                        <div class="flex items-center gap-4 text-white">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-gray-400">Location</p>
-                                <p class="font-semibold">No 1 Lawyer Close, Fidiso Estate, Abijo</p>
-                            </div>
+                    <span class="text-gold uppercase tracking-widest text-sm font-semibold">Your Host</span>
+                    <h2 class="font-serif text-4xl md:text-5xl mt-4 mb-6">Designed for Calm.<br>Built for Comfort.</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        We built Abijo Sand Residence as a place to reset—clean lines, reliable power, and a team that cares. Every detail has been thoughtfully curated to ensure your stay is nothing short of exceptional.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gold"></i>
+                            <span>No 1 Lawyer Close, Fidiso Estate, Abijo</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="phone" class="w-5 h-5 text-gold"></i>
+                            <span>+234 XXX XXX XXXX</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="mail" class="w-5 h-5 text-gold"></i>
+                            <span>hello@abijosand.com</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white/5 p-8 rounded-lg border border-white/10">
-                    <h3 class="font-serif text-2xl mb-6">Send a Message</h3>
-                    <form id="contact-form" class="space-y-4" onsubmit="handleSubmit(event)">
-                        <input type="text" placeholder="Your Name" required class="w-full p-4 bg-white/10 border border-white/20 rounded text-white placeholder-gray-400 focus:border-gold focus:outline-none transition">
-                        <input type="email" placeholder="Email Address" required class="w-full p-4 bg-white/10 border border-white/20 rounded text-white placeholder-gray-400 focus:border-gold focus:outline-none transition">
-                        <input type="tel" placeholder="Phone Number" class="w-full p-4 bg-white/10 border border-white/20 rounded text-white placeholder-gray-400 focus:border-gold focus:outline-none transition">
-                        <textarea placeholder="Your Message" rows="4" required class="w-full p-4 bg-white/10 border border-white/20 rounded text-white placeholder-gray-400 focus:border-gold focus:outline-none transition"></textarea>
-                        <button type="submit" class="w-full bg-gold text-white py-4 rounded uppercase tracking-widest font-semibold hover:bg-goldhover transition shadow-lg">Send Message</button>
-                    </form>
+                <div class="relative h-[500px] overflow-hidden rounded-lg">
+                    <img src="Public/images/host-image.jpg" alt="Host" class="w-full h-full object-cover">
                 </div>
             </div>
 
@@ -520,7 +567,7 @@
                 </div>
             </div>
 
-            <button onclick="processPayment()" class="w-full bg-gold text-white py-4 rounded uppercase tracking-widest font-semibold hover:bg-goldhover transition shadow-lg transform hover:scale-[1.02]">
+            <button onclick="processPayment()" class="w-full bg-gold text-white py-4 rounded uppercase tracking-widest font-semibold hover:bg-goldhover transition shadow-lg">
                 Proceed to Payment
             </button>
             <p class="text-xs text-center text-gray-500 mt-4">Secure payment powered by Paystack</p>
@@ -541,7 +588,6 @@
         document.getElementById('checkout').value = tomorrow.toISOString().split('T')[0];
         document.getElementById('checkout').min = today;
 
-        // Mobile menu
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
@@ -551,14 +597,13 @@
             document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Modal functions
         function openModal(room) {
             const modal = document.getElementById('booking-modal');
             const content = document.getElementById('modal-content');
             const names = {
-                'executive': 'One Bedroom Executive',
+                'executive': 'Executive 2-Bedroom',
                 'deluxe': 'Deluxe Studio',
-                'standard': 'Premium Studio'
+                'standard': 'Standard Studio'
             };
             document.getElementById('selected-room').textContent = names[room] || 'Any Available';
             
@@ -570,7 +615,7 @@
             document.getElementById('modal-checkout').textContent = checkout || '-';
             document.getElementById('modal-guests').textContent = guests + ' Guest(s)';
             
-            const prices = { 'executive': 85000, 'deluxe': 65000, 'standard': 70000 };
+            const prices = { 'executive': 130000, 'deluxe': 85000, 'standard': 65000 };
             if (checkin && checkout && room !== 'any') {
                 const days = Math.max(1, Math.ceil((new Date(checkout) - new Date(checkin)) / (1000 * 60 * 60 * 24)));
                 const total = prices[room] * days;
@@ -595,23 +640,12 @@
         }
 
         function checkAvailability() {
-            openModal('executive');
+            openModal('any');
         }
 
         function processPayment() {
-            alert('Redirecting to secure payment...\n\nIn production, this connects to Paystack.');
+            alert('Redirecting to secure payment...\n\nIn production, this connects to Paystack or Stripe.');
             closeModal();
-        }
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            btn.textContent = 'Sending...';
-            setTimeout(() => {
-                alert('Message sent! We will contact you shortly.');
-                e.target.reset();
-                btn.textContent = 'Send Message';
-            }, 1500);
         }
 
         // Scroll animations
@@ -623,7 +657,6 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Close modal on outside click
         document.getElementById('booking-modal').addEventListener('click', (e) => {
             if (e.target.id === 'booking-modal') closeModal();
         });

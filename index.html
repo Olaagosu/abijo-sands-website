@@ -526,104 +526,118 @@
 </script>
 
     <!-- Amenities Section - DARK -->
-    <section id="amenities" class="bg-[#1C1C1C] text-white py-24 px-6 lg:px-12">
-        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            <div class="aspect-[4/5] overflow-hidden rounded-lg">
-                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000&auto=format&fit=crop" alt="Amenities" class="w-full h-full object-cover">
-            </div>
+  <!-- Amenities Section -->
+<section id="amenities" class="bg-[#1C1C1C] text-white overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[800px]">
+        
+        <!-- Left: Image -->
+        <div class="relative h-[400px] lg:h-auto overflow-hidden">
+            <img src="images/amenities-room.jpg" 
+                 alt="Abijo Sand Residence Interior" 
+                 class="w-full h-full object-cover">
+        </div>
 
-            <div class="lg:pl-12">
-                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-12 leading-[0.95]">
-                    Everything<br>You Need
-                </h2>
+        <!-- Right: Content -->
+        <div class="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-24">
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-12 leading-[0.95]">
+                EVERYTHING<br>YOU NEED
+            </h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-                    
-                    <div class="flex items-start gap-4 border-b border-white/10 pb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="wifi" class="w-5 h-5 text-[#C4A77D]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">High-speed Wi-Fi</h4>
-                            <p class="text-gray-400 text-sm">Fiber-optic internet throughout</p>
-                        </div>
+            <!-- Amenities Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Wi-Fi -->
+                <div class="flex items-start gap-4 pb-6 border-b border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="wifi" class="w-6 h-6 text-[#C4A77D]"></i>
                     </div>
-
-                    <div class="flex items-start gap-4 border-b border-white/10 pb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="tv" class="w-5 h-5 text-[#C4A77D]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Smart TV + Streaming</h4>
-                            <p class="text-gray-400 text-sm">Netflix, YouTube & more</p>
-                        </div>
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wide mb-1">High-Speed Wi-Fi</h3>
+                        <p class="text-gray-400 text-sm">Fiber-optic internet throughout</p>
                     </div>
-
-                    <div class="flex items-start gap-4 border-b border-white/10 pb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="chef-hat" class="w-5 h-5 text-[#C4A77D]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Fully Equipped Kitchen</h4>
-                            <p class="text-gray-400 text-sm">Cookware, utensils & appliances</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 border-b border-white/10 pb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="zap" class="w-5 h-5 text-[#C4A77D]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">24/7 Power</h4>
-                            <p class="text-gray-400 text-sm">Inverter & solar backup</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 border-b border-white/10 pb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="car" class="w-5 h-5 text-[#C4A77D]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Secure Parking</h4>
-                            <p class="text-gray-400 text-sm">On-site parking space</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 border-b border-white/10 pb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="sparkles" class="w-5 h-5 text-[#C4A77D]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Daily Cleaning</h4>
-                            <p class="text-gray-400 text-sm">On-request housekeeping</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 border-b border-white/10 pb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="wind" class="w-5 h-5 text-[#C4A77D]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Air Conditioning</h4>
-                            <p class="text-gray-400 text-sm">Split-unit AC in all rooms</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 border-b border-white/10 pb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#C4A77D]/20 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="headset" class="w-5 h-5 text-[#C4A77D]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-base mb-1 uppercase tracking-wide text-sm">Concierge Support</h4>
-                            <p class="text-gray-400 text-sm">24/7 guest assistance</p>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- Smart TV -->
+                <div class="flex items-start gap-4 pb-6 border-b border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="tv" class="w-6 h-6 text-[#C4A77D]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wide mb-1">Smart TV + Streaming</h3>
+                        <p class="text-gray-400 text-sm">Netflix, YouTube & more</p>
+                    </div>
+                </div>
+
+                <!-- Kitchen -->
+                <div class="flex items-start gap-4 pb-6 border-b border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="chef-hat" class="w-6 h-6 text-[#C4A77D]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wide mb-1">Fully Equipped Kitchen</h3>
+                        <p class="text-gray-400 text-sm">Cookware, utensils & appliances</p>
+                    </div>
+                </div>
+
+                <!-- Power -->
+                <div class="flex items-start gap-4 pb-6 border-b border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="zap" class="w-6 h-6 text-[#C4A77D]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wide mb-1">24/7 Power</h3>
+                        <p class="text-gray-400 text-sm">Inverter & solar backup</p>
+                    </div>
+                </div>
+
+                <!-- Parking -->
+                <div class="flex items-start gap-4 pb-6 border-b border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="car" class="w-6 h-6 text-[#C4A77D]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wide mb-1">Secure Parking</h3>
+                        <p class="text-gray-400 text-sm">On-site parking space</p>
+                    </div>
+                </div>
+
+                <!-- Cleaning -->
+                <div class="flex items-start gap-4 pb-6 border-b border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-[#C4A77D]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wide mb-1">Daily Cleaning</h3>
+                        <p class="text-gray-400 text-sm">On-request housekeeping</p>
+                    </div>
+                </div>
+
+                <!-- AC -->
+                <div class="flex items-start gap-4 pb-6 border-b border-white/10 md:border-b-0">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="wind" class="w-6 h-6 text-[#C4A77D]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wide mb-1">Air Conditioning</h3>
+                        <p class="text-gray-400 text-sm">Split-unit AC in all rooms</p>
+                    </div>
+                </div>
+
+                <!-- Concierge -->
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="headset" class="w-6 h-6 text-[#C4A77D]"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold uppercase tracking-wide mb-1">Concierge Support</h3>
+                        <p class="text-gray-400 text-sm">24/7 guest assistance</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
    <section class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
     <!-- Left: Host Image -->

@@ -359,21 +359,20 @@
         </div>
     </section>
 <!-- Location/Neighborhood Section -->
-<section id="location" class="bg-[#E8E4DC]">
-    <!-- Full Width Aerial Image with Gradient Fade -->
-    <div class="relative w-full h-[60vh] lg:h-[70vh] overflow-hidden">
-        <!-- REPLACE THIS with your actual Fidiso Estate image file -->
+<section id="location" class="bg-[#E8E4DC] relative">
+    <!-- Faded Aerial Background Image -->
+    <div class="absolute top-0 left-0 w-full h-[50vh] overflow-hidden z-0">
         <img src="images/fidiso-estate-aerial.jpg" 
              alt="Fidiso Estate Aerial View" 
-             class="w-full h-full object-cover">
-        
+             class="w-full h-full object-cover opacity-30">
         <!-- Gradient fade to background color -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#E8E4DC]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#E8E4DC]/50 to-[#E8E4DC]"></div>
     </div>
 
-    <div class="px-6 lg:px-12 pb-24 -mt-32 relative z-10">
+    <div class="relative z-10 px-6 lg:px-12 pt-32 pb-24">
         <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
             
+            <!-- Left Content -->
             <div>
                 <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight mb-6 leading-[0.95]">
                     THE NEIGHBORHOOD
@@ -381,58 +380,80 @@
                 <p class="text-gray-600 text-lg leading-relaxed mb-8 max-w-lg">
                     Located in the serene Fidiso Estate, Abijo Sand Residence offers the perfect balance of tranquility and accessibility. The property is strategically positioned to provide easy access to major business districts, shopping centres, and entertainment hubs across Lekki and Victoria Island.
                 </p>
-                <a href="https://maps.google.com/?q=Abijo+Gra+Lekki+Lagos" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-gray-400 rounded-full text-sm font-bold uppercase tracking-wide hover:bg-[#1C1C1C] hover:text-white hover:border-[#1C1C1C] transition-all">
+                <a href="https://maps.google.com/?q=Abijo+Gra+Lekki+Lagos" target="_blank" 
+                   class="inline-flex items-center gap-2 px-6 py-3 border border-gray-400 rounded-full text-sm font-bold uppercase tracking-wide hover:bg-[#1C1C1C] hover:text-white hover:border-[#1C1C1C] transition-all bg-white/50 backdrop-blur-sm">
                     <i data-lucide="map-pin" class="w-4 h-4"></i>
                     Get Directions
                 </a>
             </div>
 
+            <!-- Right Side: All 4 Category Cards -->
             <div class="space-y-4">
+                
+                <!-- Business Districts -->
                 <div class="bg-white p-6 shadow-sm rounded-lg">
                     <h3 class="text-xs uppercase tracking-widest text-[#C4A77D] font-black mb-4">Business Districts</h3>
                     <div class="space-y-4">
                         <div class="flex justify-between items-center text-base border-b border-gray-100 pb-3">
-                            <span class="font-semibold">Lekki Phase 1</span>
-                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold uppercase">15 mins</span>
+                            <span class="font-semibold text-[#1C1C1C]">Lekki Phase 1</span>
+                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold">15 mins</span>
                         </div>
                         <div class="flex justify-between items-center text-base">
-                            <span class="font-semibold">Victoria Island</span>
-                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold uppercase">20 mins</span>
+                            <span class="font-semibold text-[#1C1C1C]">Victoria Island</span>
+                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold">20 mins</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Leisure & Lifestyle -->
                 <div class="bg-white p-6 shadow-sm rounded-lg">
                     <h3 class="text-xs uppercase tracking-widest text-[#C4A77D] font-black mb-4">Leisure & Lifestyle</h3>
                     <div class="space-y-4">
                         <div class="flex justify-between items-center text-base border-b border-gray-100 pb-3">
-                            <span class="font-semibold">Elegushi Beach</span>
-                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold uppercase">25 mins</span>
+                            <span class="font-semibold text-[#1C1C1C]">Elegushi Beach</span>
+                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold">25 mins</span>
                         </div>
                         <div class="flex justify-between items-center text-base">
-                            <span class="font-semibold">Lakowe Golf Resort</span>
-                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold uppercase">15 mins</span>
+                            <span class="font-semibold text-[#1C1C1C]">Lakowe Golf Resort</span>
+                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold">15 mins</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Shopping & Dining -->
                 <div class="bg-white p-6 shadow-sm rounded-lg">
                     <h3 class="text-xs uppercase tracking-widest text-[#C4A77D] font-black mb-4">Shopping & Dining</h3>
                     <div class="space-y-4">
                         <div class="flex justify-between items-center text-base border-b border-gray-100 pb-3">
-                            <span class="font-semibold">Novare Mall (Shoprite)</span>
-                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold uppercase">10 mins</span>
+                            <span class="font-semibold text-[#1C1C1C]">Novare Mall (Shoprite)</span>
+                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold">10 mins</span>
                         </div>
                         <div class="flex justify-between items-center text-base border-b border-gray-100 pb-3">
-                            <span class="font-semibold">The Place Restaurant</span>
-                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold uppercase">10 mins</span>
+                            <span class="font-semibold text-[#1C1C1C]">The Place Restaurant</span>
+                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold">10 mins</span>
                         </div>
                         <div class="flex justify-between items-center text-base">
-                            <span class="font-semibold">Local Markets</span>
-                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold uppercase">5 mins</span>
+                            <span class="font-semibold text-[#1C1C1C]">Local Markets</span>
+                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold">5 mins</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Healthcare (Was Missing!) -->
+                <div class="bg-white p-6 shadow-sm rounded-lg">
+                    <h3 class="text-xs uppercase tracking-widest text-[#C4A77D] font-black mb-4">Healthcare</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center text-base border-b border-gray-100 pb-3">
+                            <span class="font-semibold text-[#1C1C1C]">Reddington Hospital</span>
+                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold">12 mins</span>
+                        </div>
+                        <div class="flex justify-between items-center text-base">
+                            <span class="font-semibold text-[#1C1C1C]">Murtala Muhammed Int'l Airport</span>
+                            <span class="text-xs bg-gray-100 px-3 py-1 rounded text-gray-500 font-bold">45 mins</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

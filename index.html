@@ -54,128 +54,21 @@
 
     <div class="h-20"></div>
 
-    <!-- Hero Slider Section -->
-<section class="relative h-screen w-full overflow-hidden bg-[#1C1C1C]">
-    
-    <!-- Slides Container -->
-    <div id="heroSlider" class="flex h-full transition-transform duration-1000 ease-out" style="width: 300%;">
-        
-        <!-- Slide 1 -->
-        <div class="relative w-full h-full" style="width: 33.333%;">
-            <img src="images/hero-living-room.jpg" 
-                 alt="Luxury Living Room" 
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/40"></div>
-        </div>
-        
-        <!-- Slide 2 -->
-        <div class="relative w-full h-full" style="width: 33.333%;">
-            <img src="images/hero-bedroom.jpg" 
-                 alt="Master Bedroom Suite" 
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/40"></div>
-        </div>
-        
-        <!-- Slide 3 -->
-        <div class="relative w-full h-full" style="width: 33.333%;">
-            <img src="images/hero-exterior.jpg" 
-                 alt="Abijo Sand Residence Exterior" 
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/40"></div>
-        </div>
-        
-    </div>
+   <div class="absolute inset-0 flex animate-slide-left">
+    <img src="images/final-cta-room.jpg" class="w-full h-full object-cover flex-shrink-0">
+    <img src="images/final-cta-room.jpg" class="w-full h-full object-cover flex-shrink-0">
+</div>
 
-    <!-- Static Text Overlay (Stays Centered) -->
-    <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tight leading-[0.9] mb-6 drop-shadow-2xl">
-            Your Luxury Home<br>
-            <span class="text-[#C4A77D]">Away From Home</span>
-        </h1>
-        <p class="text-lg md:text-xl lg:text-2xl text-white/90 uppercase tracking-[0.2em] font-medium drop-shadow-lg">
-            Premium Serviced Apartments at Fidiso Estate, Abijo Lekki
-        </p>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </div>
-    </div>
-
-    <!-- Navigation Dots -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-        <button onclick="goToSlide(0)" class="slider-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all duration-300 ring-2 ring-transparent hover:ring-white/50" aria-label="Slide 1"></button>
-        <button onclick="goToSlide(1)" class="slider-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all duration-300 ring-2 ring-transparent hover:ring-white/50" aria-label="Slide 2"></button>
-        <button onclick="goToSlide(2)" class="slider-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-all duration-300 ring-2 ring-transparent hover:ring-white/50" aria-label="Slide 3"></button>
-    </div>
-
-    <!-- Side Arrows (Optional - remove if you want only auto-play) -->
-    <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 z-20 text-white/50 hover:text-white transition-all hover:scale-110 hidden md:block">
-        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"></path>
-        </svg>
-    </button>
-    <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 z-20 text-white/50 hover:text-white transition-all hover:scale-110 hidden md:block">
-        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path>
-        </svg>
-    </button>
-
-</section>
-
-<script>
-    let currentSlide = 0;
-    const slider = document.getElementById('heroSlider');
-    const dots = document.querySelectorAll('.slider-dot');
-    const totalSlides = 3;
-    let slideInterval;
-
-    function updateSlider() {
-        slider.style.transform = `translateX(-${currentSlide * (100/3)}%)`;
-        
-        // Update dots
-        dots.forEach((dot, index) => {
-            if (index === currentSlide) {
-                dot.classList.remove('bg-white/40');
-                dot.classList.add('bg-white', 'scale-125');
-            } else {
-                dot.classList.add('bg-white/40');
-                dot.classList.remove('bg-white', 'scale-125');
-            }
-        });
+<style>
+    @keyframes slide-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
     }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlider();
+    .animate-slide-left {
+        animation: slide-left 15s linear infinite;
+        width: 200%;
     }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlider();
-    }
-
-    function goToSlide(n) {
-        currentSlide = n;
-        updateSlider();
-        resetInterval();
-    }
-
-    function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    }
-
-    // Initialize
-    updateSlider();
-    slideInterval = setInterval(nextSlide, 5000);
-
-    // Pause on hover
-    slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    slider.addEventListener('mouseleave', resetInterval);
-</script>
+</style>
 
     <!-- Suites Section -->
     <section id="suites" class="py-24 px-6 lg:px-12 bg-[#F5F3F0]">

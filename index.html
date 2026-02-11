@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abijo Sand Residence | Luxury Short-Stay Apartments in Lekki</title>
-    <meta name="description" content="Premium short-stay apartments in Abijo, Lekki, Lagos. Minimal design, maximum calm.">
+    <title>Abijo Sand Residence | Luxury Short-Stay Apartments</title>
+    <meta name="description" content="Premium short-stay apartments in Abijo, Lekki, Lagos. Three exceptional spaces designed for the discerning traveler.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,7 +12,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -22,12 +22,13 @@
             theme: {
                 extend: {
                     colors: {
-                        cream: '#F5F3F0',
-                        sand: '#EBE7E0',
-                        charcoal: '#1A1A1A',
-                        gold: '#B8956C',
-                        goldhover: '#A6855C',
-                        lightgold: '#D4B896',
+                        cream: '#F9F7F4',
+                        sand: '#E8E2D9',
+                        stone: '#D4CFC7',
+                        charcoal: '#1C1C1C',
+                        warm: '#2D2A26',
+                        gold: '#C4A77D',
+                        golddark: '#A68B5B',
                     },
                     fontFamily: {
                         serif: ['Playfair Display', 'serif'],
@@ -41,658 +42,584 @@
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #F5F3F0; 
-            color: #1A1A1A;
+            background-color: #F9F7F4; 
+            color: #1C1C1C;
+            overflow-x: hidden;
         }
-        .font-serif { 
-            font-family: 'Playfair Display', 'serif'; 
-        }
+        .font-serif { font-family: 'Playfair Display', serif; }
         
-        .fade-in { animation: fadeIn 1s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .img-zoom { transition: transform 0.7s ease; }
-        .group:hover .img-zoom { transform: scale(1.05); }
-        
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        
+        /* Smooth scroll behavior */
         html { scroll-behavior: smooth; }
         
+        /* Custom selection color */
+        ::selection { background: #C4A77D; color: white; }
+        
+        /* Scrollbar styling */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #B8956C; border-radius: 4px; }
+        ::-webkit-scrollbar-track { background: #F9F7F4; }
+        ::-webkit-scrollbar-thumb { background: #C4A77D; border-radius: 4px; }
+        
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Stagger delays */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        
+        /* Image hover effects */
+        .img-zoom { 
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); 
+        }
+        .group:hover .img-zoom { 
+            transform: scale(1.08); 
+        }
+        
+        /* Text reveal mask */
+        .text-reveal {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        /* Parallax container */
+        .parallax-wrap {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Custom cursor effect for gallery */
+        .cursor-drag {
+            cursor: grab;
+        }
+        .cursor-drag:active {
+            cursor: grabbing;
+        }
+        
+        /* Gradient text */
+        .text-gradient {
+            background: linear-gradient(135deg, #1C1C1C 0%, #C4A77D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Mobile menu blur */
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-cream/95 backdrop-blur-sm z-50 border-b border-gray-200/50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="#" class="flex items-baseline gap-1">
-                    <span class="font-serif text-xl tracking-wide text-charcoal">ABIJO SAND</span>
-                    <span class="font-serif text-xl tracking-wide text-gold">RESIDENCE</span>
-                </a>
-                
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#gallery" class="text-xs font-medium uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Gallery</a>
-                    <a href="#suites" class="text-xs font-medium uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Suites</a>
-                    <a href="#amenities" class="text-xs font-medium uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Amenities</a>
-                    <a href="#location" class="text-xs font-medium uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Location</a>
-                    <a href="#reviews" class="text-xs font-medium uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Reviews</a>
-                    <a href="#contact" class="text-xs font-medium uppercase tracking-widest text-gray-600 hover:text-charcoal transition">Contact</a>
-                    <button onclick="scrollToBooking()" class="bg-gold text-white px-6 py-2.5 rounded text-xs font-medium uppercase tracking-widest hover:bg-goldhover transition shadow-md">Book Now</button>
-                </div>
-
-                <button class="md:hidden text-charcoal" onclick="toggleMenu()">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-6 lg:px-12">
+        <div class="max-w-[1800px] mx-auto flex justify-between items-center">
+            <a href="#" class="flex flex-col items-start">
+                <span class="font-serif text-2xl tracking-wide text-charcoal font-medium leading-none">Abijo Sand</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-gold mt-1">Residence</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-12">
+                <a href="#suites" class="text-sm font-medium text-warm/80 hover:text-charcoal transition-colors tracking-wide">Suites</a>
+                <a href="#gallery" class="text-sm font-medium text-warm/80 hover:text-charcoal transition-colors tracking-wide">Gallery</a>
+                <a href="#experience" class="text-sm font-medium text-warm/80 hover:text-charcoal transition-colors tracking-wide">Experience</a>
+                <a href="#location" class="text-sm font-medium text-warm/80 hover:text-charcoal transition-colors tracking-wide">Location</a>
+                <button onclick="scrollToBooking()" class="bg-charcoal text-white px-8 py-3 text-sm font-medium tracking-wide hover:bg-gold transition-all duration-300">
+                    Book Stay
                 </button>
             </div>
+
+            <button class="md:hidden text-charcoal" onclick="toggleMenu()">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-gray-200">
-            <div class="px-6 py-4 space-y-3">
-                <a href="#gallery" onclick="toggleMenu()" class="block py-2 text-xs uppercase tracking-widest text-gray-600">Gallery</a>
-                <a href="#suites" onclick="toggleMenu()" class="block py-2 text-xs uppercase tracking-widest text-gray-600">Suites</a>
-                <a href="#amenities" onclick="toggleMenu()" class="block py-2 text-xs uppercase tracking-widest text-gray-600">Amenities</a>
-                <a href="#location" onclick="toggleMenu()" class="block py-2 text-xs uppercase tracking-widest text-gray-600">Location</a>
-                <a href="#reviews" onclick="toggleMenu()" class="block py-2 text-xs uppercase tracking-widest text-gray-600">Reviews</a>
-                <a href="#contact" onclick="toggleMenu()" class="block py-2 text-xs uppercase tracking-widest text-gray-600">Contact</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-cream/98 backdrop-blur-md z-40 pt-24 px-6">
+            <button onclick="toggleMenu()" class="absolute top-6 right-6 text-charcoal">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="flex flex-col gap-8">
+                <a href="#suites" onclick="toggleMenu()" class="font-serif text-4xl text-charcoal">Suites</a>
+                <a href="#gallery" onclick="toggleMenu()" class="font-serif text-4xl text-charcoal">Gallery</a>
+                <a href="#experience" onclick="toggleMenu()" class="font-serif text-4xl text-charcoal">Experience</a>
+                <a href="#location" onclick="toggleMenu()" class="font-serif text-4xl text-charcoal">Location</a>
+                <button onclick="toggleMenu(); scrollToBooking()" class="bg-charcoal text-white py-4 text-lg font-medium mt-8">Book Your Stay</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-20 min-h-screen flex items-center justify-center bg-cream">
+    <!-- Hero Section - Editorial Layout -->
+    <section class="min-h-screen relative flex items-end pb-20 lg:pb-32 pt-32 px-6 lg:px-12 overflow-hidden">
+        <!-- Background Image with Parallax -->
         <div class="absolute inset-0 z-0">
-            <img src="Public/images/hero-portrait.jpg" alt="Luxury Interior" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-cream/20 via-cream/60 to-cream z-10"></div>
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=2400&auto=format&fit=crop" 
+                 alt="Luxury Bedroom" 
+                 class="w-full h-full object-cover scale-110"
+                 id="hero-image">
         </div>
-        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center py-20 reveal active">
-            <p class="text-gold uppercase tracking-[0.3em] text-xs mb-8 font-medium">Welcome to</p>
-            
-            <h1 class="font-serif text-6xl md:text-7xl lg:text-8xl mb-8 text-charcoal leading-[0.9]">
-                A Gallery<br>
-                Of Rooms
-            </h1>
-            
-            <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                Premium short-stay apartments in Abijo, Lekki. Minimal design, maximum calm. Three exceptional spaces designed for the discerning traveler.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button onclick="scrollToBooking()" class="bg-charcoal text-white px-10 py-3.5 rounded text-xs uppercase tracking-widest font-medium hover:bg-gray-800 transition w-full sm:w-auto">
-                    Check Availability
-                </button>
-                <button onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})" class="border border-charcoal text-charcoal px-10 py-3.5 rounded text-xs uppercase tracking-widest font-medium hover:bg-charcoal hover:text-white transition w-full sm:w-auto">
-                    View Gallery
-                </button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-serif text-4xl md:text-5xl mb-4 text-charcoal">The Collection</h2>
-                <p class="text-gray-500 text-sm max-w-xl mx-auto">Every space is thoughtfully designed with warm tones, natural light, and premium finishes.</p>
+        <div class="max-w-[1800px] mx-auto w-full relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            <!-- Main Headline -->
+            <div class="lg:col-span-8 reveal">
+                <p class="text-gold uppercase tracking-[0.4em] text-xs mb-6 font-medium">Lekki, Lagos</p>
+                <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.9] text-charcoal mb-8">
+                    A Gallery<br>
+                    <span class="italic text-gold">of Rooms</span>
+                </h1>
+                <p class="text-lg md:text-xl text-warm/80 max-w-xl leading-relaxed font-light">
+                    Three curated spaces in Abijo's serene Fidiso Estate. 
+                    Where minimalist design meets uncompromising comfort.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-                <div class="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer">
-                    <img src="Public/images/gallery-bedroom-wide.jpg" alt="Master Bedroom" class="img-zoom w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                </div>
-                
-                <div class="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer">
-                    <img src="Public/images/gallery-living-room.jpg" alt="Living Area" class="img-zoom w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                </div>
-                
-                <div class="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer">
-                    <img src="Public/images/gallery-bedroom-detail.jpg" alt="Bedroom Detail" class="img-zoom w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer">
-                    <img src="Public/images/gallery-living-wide.jpg" alt="Living Space" class="img-zoom w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                </div>
-                
-                <div class="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer">
-                    <img src="Public/images/gallery-sofa.jpg" alt="Lounge" class="img-zoom w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                </div>
-                
-                <div class="group relative overflow-hidden rounded-lg aspect-[4/3] cursor-pointer">
-                    <img src="Public/images/gallery-bedside.jpg" alt="Interior Detail" class="img-zoom w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Availability Section -->
-    <section id="booking" class="py-20 bg-sand">
-        <div class="max-w-4xl mx-auto px-6 lg:px-8 reveal">
-            <div class="bg-white p-8 md:p-10 rounded-lg shadow-sm">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-medium">Check In</label>
-                        <input type="date" id="checkin" class="w-full p-3 border border-gray-200 rounded bg-cream/50 text-sm focus:border-gold focus:outline-none transition">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-medium">Check Out</label>
-                        <input type="date" id="checkout" class="w-full p-3 border border-gray-200 rounded bg-cream/50 text-sm focus:border-gold focus:outline-none transition">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-medium">Guests</label>
-                        <select id="guests" class="w-full p-3 border border-gray-200 rounded bg-cream/50 text-sm focus:border-gold focus:outline-none transition">
-                            <option value="1">1 Guest</option>
-                            <option value="2" selected>2 Guests</option>
-                            <option value="3">3 Guests</option>
-                            <option value="4">4 Guests</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button onclick="checkAvailability()" class="w-full bg-charcoal text-white py-3 rounded text-xs uppercase tracking-widest font-medium hover:bg-gray-800 transition">Check Availability</button>
-                    </div>
-                </div>
-                <div class="flex justify-center gap-8 mt-6 text-xs text-gray-500">
-                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-gold"></i> Best price guarantee</span>
-                    <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-3 h-3 text-gold"></i> Secure payment</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Suites Section -->
-    <section id="suites" class="py-24 bg-cream">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-serif text-4xl md:text-5xl mb-4 text-charcoal">Choose Your Space</h2>
-                <p class="text-gray-500 text-sm max-w-xl mx-auto">Three exceptional spaces, one uncompromising standard of luxury</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
-                <!-- Executive Suite -->
-                <div class="bg-white rounded-lg overflow-hidden border border-gray-100 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="Public/images/executive-suite.jpg" alt="Executive Suite" class="img-zoom w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-gold/90 text-white px-3 py-1 text-[10px] uppercase tracking-widest font-medium rounded-sm">Premium</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-serif text-2xl mb-3 text-charcoal">Executive 2-Bedroom</h3>
-                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">A sanctuary of sophistication where every detail whispers luxury. Two bedrooms, panoramic views, and premium furnishings.</p>
-                        
-                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
-                            <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4"></i> Up to 4 guests</span>
-                            <span>85 sqm</span>
-                        </div>
-
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">King Bed</span>
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Full Kitchen</span>
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Washer</span>
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Balcony</span>
-                        </div>
-
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <!-- Availability Widget -->
+            <div class="lg:col-span-4 reveal delay-200">
+                <div class="bg-white/90 backdrop-blur-sm p-8 shadow-2xl border border-stone/30">
+                    <p class="text-xs uppercase tracking-[0.2em] text-warm/60 mb-6 font-medium">Check Availability</p>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <span class="text-2xl font-semibold text-charcoal">₦130,000</span>
-                                <span class="text-gray-400 text-sm">/night</span>
+                                <label class="block text-[10px] uppercase tracking-wider text-warm/50 mb-2">Check In</label>
+                                <input type="date" id="checkin" class="w-full bg-transparent border-b border-stone pb-2 text-sm focus:outline-none focus:border-gold transition-colors">
                             </div>
-                            <button onclick="openModal('executive')" class="bg-charcoal text-white px-6 py-2 rounded text-xs uppercase tracking-widest font-medium hover:bg-gray-800 transition">Book Now</button>
+                            <div>
+                                <label class="block text-[10px] uppercase tracking-wider text-warm/50 mb-2">Check Out</label>
+                                <input type="date" id="checkout" class="w-full bg-transparent border-b border-stone pb-2 text-sm focus:outline-none focus:border-gold transition-colors">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-wider text-warm/50 mb-2">Guests</label>
+                            <select id="guests" class="w-full bg-transparent border-b border-stone pb-2 text-sm focus:outline-none focus:border-gold transition-colors">
+                                <option>1 Guest</option>
+                                <option selected>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4 Guests</option>
+                            </select>
+                        </div>
+                        <button onclick="scrollToSuites()" class="w-full bg-charcoal text-white py-4 text-sm uppercase tracking-[0.2em] font-medium hover:bg-gold transition-all duration-300 mt-6">
+                            View Suites
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Suites - Asymmetric Editorial Layout -->
+    <section id="suites" class="py-32 px-6 lg:px-12 bg-cream">
+        <div class="max-w-[1800px] mx-auto">
+            <!-- Section Header -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 reveal">
+                <div class="lg:col-span-4">
+                    <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4 font-medium">Accommodations</p>
+                    <h2 class="font-serif text-5xl md:text-6xl text-charcoal leading-[1.1]">
+                        Choose Your<br>Space
+                    </h2>
+                </div>
+                <div class="lg:col-span-4 lg:col-start-9 flex items-end">
+                    <p class="text-warm/70 text-lg leading-relaxed font-light">
+                        Each apartment is fully furnished with premium amenities, 
+                        high-speed fiber internet, and 24/7 power backup.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Suite 1: Executive - Large Feature -->
+            <div class="group relative mb-12 reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 relative overflow-hidden aspect-[16/9] lg:aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2400&auto=format&fit=crop" 
+                             alt="Executive 2-Bedroom" 
+                             class="img-zoom w-full h-full object-cover">
+                        <div class="absolute top-6 left-6 bg-white px-4 py-2">
+                            <span class="text-[10px] uppercase tracking-[0.2em] font-medium text-charcoal">Premium</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 lg:pl-12">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="font-serif text-4xl text-charcoal mb-2">Executive 2-Bedroom</h3>
+                                <p class="text-gold text-sm tracking-wide">85 sqm • Up to 4 guests</p>
+                            </div>
+                            <p class="text-warm/70 leading-relaxed font-light">
+                                A sanctuary of sophistication with panoramic estate views, 
+                                master en-suite, fully equipped kitchen, and private balcony. 
+                                Ideal for families or extended stays.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-3 py-1 bg-sand text-[11px] uppercase tracking-wider text-warm">King Bed</span>
+                                <span class="px-3 py-1 bg-sand text-[11px] uppercase tracking-wider text-warm">Full Kitchen</span>
+                                <span class="px-3 py-1 bg-sand text-[11px] uppercase tracking-wider text-warm">Balcony</span>
+                            </div>
+                            <div class="pt-6 border-t border-stone flex items-center justify-between">
+                                <div>
+                                    <span class="font-serif text-3xl text-charcoal">₦130,000</span>
+                                    <span class="text-warm/50 text-sm">/night</span>
+                                </div>
+                                <button onclick="selectSuite('executive')" class="group/btn flex items-center gap-2 text-sm font-medium text-charcoal hover:text-gold transition-colors">
+                                    Book Now 
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <!-- Suite 2 & 3: Split Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Deluxe Studio -->
-                <div class="bg-white rounded-lg overflow-hidden border border-gray-100 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="Public/images/deluxe-studio.jpg" alt="Deluxe Studio" class="img-zoom w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-charcoal text-white px-3 py-1 text-[10px] uppercase tracking-widest font-medium rounded-sm">Most Popular</div>
+                <div class="group relative reveal delay-100">
+                    <div class="relative overflow-hidden aspect-[4/5] mb-6">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=1600&auto=format&fit=crop" 
+                             alt="Deluxe Studio" 
+                             class="img-zoom w-full h-full object-cover">
+                        <div class="absolute top-6 left-6 bg-charcoal px-4 py-2">
+                            <span class="text-[10px] uppercase tracking-[0.2em] font-medium text-white">Most Popular</span>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-serif text-2xl mb-3 text-charcoal">Deluxe Studio</h3>
-                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Where modern elegance meets uncompromising comfort. Perfect for the discerning business traveler seeking style and function.</p>
-                        
-                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
-                            <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4"></i> Up to 2 guests</span>
-                            <span>45 sqm</span>
-                        </div>
-
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Queen Bed</span>
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Kitchenette</span>
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Washer</span>
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Work Desk</span>
-                        </div>
-
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
                             <div>
-                                <span class="text-2xl font-semibold text-charcoal">₦85,000</span>
-                                <span class="text-gray-400 text-sm">/night</span>
+                                <h3 class="font-serif text-3xl text-charcoal mb-1">Deluxe Studio</h3>
+                                <p class="text-gold text-sm">45 sqm • 2 guests</p>
                             </div>
-                            <button onclick="openModal('deluxe')" class="bg-charcoal text-white px-6 py-2 rounded text-xs uppercase tracking-widest font-medium hover:bg-gray-800 transition">Book Now</button>
+                            <div class="text-right">
+                                <span class="font-serif text-2xl text-charcoal block">₦85,000</span>
+                                <span class="text-warm/50 text-xs">per night</span>
+                            </div>
                         </div>
+                        <p class="text-warm/70 leading-relaxed text-sm font-light">
+                            Modern elegance for the discerning business traveler. 
+                            Features queen bed, kitchenette, dedicated workspace, and rain shower.
+                        </p>
+                        <button onclick="selectSuite('deluxe')" class="w-full py-4 border border-charcoal text-charcoal text-sm uppercase tracking-[0.2em] font-medium hover:bg-charcoal hover:text-white transition-all duration-300">
+                            Select Dates
+                        </button>
                     </div>
                 </div>
 
                 <!-- Standard Studio -->
-                <div class="bg-white rounded-lg overflow-hidden border border-gray-100 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="Public/images/standard-studio.jpg" alt="Standard Studio" class="img-zoom w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-white/90 text-charcoal border border-gray-200 px-3 py-1 text-[10px] uppercase tracking-widest font-medium rounded-sm">Smart Choice</div>
+                <div class="group relative reveal delay-200">
+                    <div class="relative overflow-hidden aspect-[4/5] mb-6">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop" 
+                             alt="Standard Studio" 
+                             class="img-zoom w-full h-full object-cover">
+                        <div class="absolute top-6 left-6 bg-white px-4 py-2 border border-stone">
+                            <span class="text-[10px] uppercase tracking-[0.2em] font-medium text-charcoal">Smart Choice</span>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-serif text-2xl mb-3 text-charcoal">Standard Studio</h3>
-                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Intimate luxury that does not compromise. Every essential thoughtfully curated, every comfort carefully considered.</p>
-                        
-                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-500">
-                            <span class="flex items-center gap-1"><i data-lucide="users" class="w-4 h-4"></i> Up to 2 guests</span>
-                            <span>35 sqm</span>
-                        </div>
-
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Queen Bed</span>
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Kitchenette</span>
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Smart TV</span>
-                            <span class="px-3 py-1 bg-sand text-[10px] uppercase tracking-wide rounded-sm">Free WiFi</span>
-                        </div>
-
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
                             <div>
-                                <span class="text-2xl font-semibold text-charcoal">₦65,000</span>
-                                <span class="text-gray-400 text-sm">/night</span>
+                                <h3 class="font-serif text-3xl text-charcoal mb-1">Standard Studio</h3>
+                                <p class="text-gold text-sm">35 sqm • 2 guests</p>
                             </div>
-                            <button onclick="openModal('standard')" class="bg-charcoal text-white px-6 py-2 rounded text-xs uppercase tracking-widest font-medium hover:bg-gray-800 transition">Book Now</button>
+                            <div class="text-right">
+                                <span class="font-serif text-2xl text-charcoal block">₦65,000</span>
+                                <span class="text-warm/50 text-xs">per night</span>
+                            </div>
                         </div>
+                        <p class="text-warm/70 leading-relaxed text-sm font-light">
+                            Intimate luxury without compromise. Queen bed, kitchenette, 
+                            smart TV, and all essentials for a comfortable stay.
+                        </p>
+                        <button onclick="selectSuite('standard')" class="w-full py-4 border border-charcoal text-charcoal text-sm uppercase tracking-[0.2em] font-medium hover:bg-charcoal hover:text-white transition-all duration-300">
+                            Select Dates
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Amenities Section -->
-    <section id="amenities" class="py-24 bg-charcoal text-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal">
-                <div class="relative h-[500px] overflow-hidden rounded-lg">
-                    <img src="Public/images/amenities-room.jpg" alt="Amenities" class="w-full h-full object-cover">
-                </div>
-                
+    <!-- Visual Gallery - Horizontal Scroll -->
+    <section id="gallery" class="py-32 bg-charcoal text-cream overflow-hidden">
+        <div class="px-6 lg:px-12 mb-16 reveal">
+            <div class="max-w-[1800px] mx-auto flex justify-between items-end">
                 <div>
-                    <h2 class="font-serif text-4xl md:text-5xl mb-12">Everything You Need</h2>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="wifi" class="w-5 h-5 text-gold"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1 text-sm">High-speed Wi-Fi</h4>
-                                <p class="text-xs text-gray-400">Fiber-optic internet throughout</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="tv" class="w-5 h-5 text-gold"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1 text-sm">Smart TV + Streaming</h4>
-                                <p class="text-xs text-gray-400">Netflix, YouTube & more</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="utensils" class="w-5 h-5 text-gold"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1 text-sm">Fully Equipped Kitchen</h4>
-                                <p class="text-xs text-gray-400">Cookware, utensils & appliances</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="zap" class="w-5 h-5 text-gold"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1 text-sm">Inverter & Solar Backup</h4>
-                                <p class="text-xs text-gray-400">24/7 uninterrupted power</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="car" class="w-5 h-5 text-gold"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1 text-sm">Secure Parking</h4>
-                                <p class="text-xs text-gray-400">On-site parking space</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="sparkles" class="w-5 h-5 text-gold"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1 text-sm">Daily Cleaning</h4>
-                                <p class="text-xs text-gray-400">On-request housekeeping</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="wind" class="w-5 h-5 text-gold"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1 text-sm">Air Conditioning</h4>
-                                <p class="text-xs text-gray-400">Split-unit AC in all rooms</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="phone" class="w-5 h-5 text-gold"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium mb-1 text-sm">Concierge Support</h4>
-                                <p class="text-xs text-gray-400">24/7 guest assistance</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4 font-medium">The Space</p>
+                    <h2 class="font-serif text-5xl md:text-6xl">Interiors</h2>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="location" class="py-24 bg-sand">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 reveal">
-            <div class="relative h-[300px] overflow-hidden rounded-lg mb-16">
-                <img src="Public/images/location-strip.jpg" alt="Location Map" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <div>
-                    <h2 class="text-5xl md:text-6xl font-bold uppercase mb-8 text-charcoal tracking-tight leading-none">The<br>Neighborhood</h2>
-                    <p class="text-gray-600 text-base leading-relaxed mb-8 max-w-md">
-                        Located in the serene Fidiso Estate, Abijo Sand Residence offers the perfect balance of tranquility and accessibility. The property is strategically positioned to provide easy access to major business districts, shopping centres, and entertainment hubs across Lekki and Victoria Island.
-                    </p>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Abijo+Sand+Residence,+No+1+Lawyer+Close,+Fidiso+Estate,+Abijo,+Lekki,+Lagos" target="_blank" class="inline-flex items-center gap-2 border border-gray-300 bg-white text-charcoal px-6 py-3 rounded-lg hover:bg-charcoal hover:text-white transition group shadow-sm text-xs uppercase tracking-widest font-medium">
-                        <i data-lucide="map-pin" class="w-4 h-4"></i>
-                        Get Directions
-                    </a>
-                </div>
-
-                <div class="space-y-6">
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="text-gold uppercase tracking-widest text-[10px] font-bold mb-4">Business Districts</h4>
-                        <ul class="space-y-3">
-                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                                <span class="text-sm">Lekki Phase 1</span>
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">15 mins</span>
-                            </li>
-                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                                <span class="text-sm">Victoria Island</span>
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">20 mins</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="text-gold uppercase tracking-widest text-[10px] font-bold mb-4">Leisure & Lifestyle</h4>
-                        <ul class="space-y-3">
-                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                                <span class="text-sm">Elegushi Beach</span>
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">25 mins</span>
-                            </li>
-                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                                <span class="text-sm">Lakowe Golf Resort</span>
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">15 mins</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="text-gold uppercase tracking-widest text-[10px] font-bold mb-4">Shopping & Dining</h4>
-                        <ul class="space-y-3">
-                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                                <span class="text-sm">Novare Mall (Shoprite)</span>
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">10 mins</span>
-                            </li>
-                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                                <span class="text-sm">The Place Restaurant</span>
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">10 mins</span>
-                            </li>
-                            <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                                <span class="text-sm">Local Markets</span>
-                                <span class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-500">5 mins</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 reveal">
-            <div class="text-center mb-16">
-                <h2 class="font-serif text-4xl md:text-5xl mb-4 text-charcoal">Word on the Street</h2>
-                <p class="text-gray-500 text-sm max-w-xl mx-auto">What our guests say about their stay</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="bg-cream p-8 rounded-lg">
-                    <div class="flex text-gold mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">"Exceptional service and beautiful apartment. The attention to detail is remarkable. Perfect for my business trip - quiet, secure, and fully equipped. Will definitely return."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-charcoal text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">JD</div>
-                        <div>
-                            <h4 class="font-semibold text-sm">James D.</h4>
-                            <p class="text-xs text-gray-500">Business Traveler • January 2026</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="bg-cream p-8 rounded-lg">
-                    <div class="flex text-gold mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">"Stayed here with my family for the holidays. The executive suite was spacious and immaculate. The kitchen had everything we needed. Felt like home away from home!"</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-charcoal text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">SA</div>
-                        <div>
-                            <h4 class="font-semibold text-sm">Sarah A.</h4>
-                            <p class="text-xs text-gray-500">Family Vacation • December 2025</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="bg-cream p-8 rounded-lg">
-                    <div class="flex text-gold mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">"Coming from London, I wanted somewhere reliable and comfortable. Abijo Sand exceeded all expectations. The WiFi was fast, power was constant, and staff was incredibly helpful."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-charcoal text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">OK</div>
-                        <div>
-                            <h4 class="font-semibold text-sm">Olumide K.</h4>
-                            <p class="text-xs text-gray-500">Diaspora Visit • November 2025</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Host Section -->
-    <section class="py-24 bg-cream">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 reveal">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="relative h-[600px] overflow-hidden rounded-lg">
-                    <img src="Public/images/host-image.jpg" alt="Your Host" class="w-full h-full object-cover">
-                </div>
-                
-                <div>
-                    <span class="text-gold uppercase tracking-widest text-[10px] font-bold mb-4 block">Your Host</span>
-                    <h2 class="text-5xl md:text-6xl font-extrabold uppercase mb-6 text-charcoal tracking-tight leading-none">Designed for Calm.<br>Built for Comfort.</h2>
-                    <p class="text-gray-600 text-base leading-relaxed mb-6">
-                        We built Abijo Sand Residence as a place to reset—clean lines, reliable power, and a team that cares. Every detail has been thoughtfully curated to ensure your stay is nothing short of exceptional.
-                    </p>
-                    <p class="text-gray-600 text-base leading-relaxed mb-8">
-                        Whether you are here for business or leisure, our apartments provide the perfect sanctuary in the heart of Lekki. Experience luxury living with the warmth of home.
-                    </p>
-                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="inline-flex items-center gap-2 border border-gray-300 bg-white text-charcoal px-6 py-3 rounded-lg hover:bg-charcoal hover:text-white transition text-xs uppercase tracking-widest font-medium">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i>
-                        Ask a Question
+                <div class="hidden md:flex gap-4">
+                    <button onclick="scrollGallery('left')" class="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center hover:bg-cream hover:text-charcoal transition-all">
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </button>
+                    <button onclick="scrollGallery('right')" class="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center hover:bg-cream hover:text-charcoal transition-all">
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="relative py-40 bg-fixed bg-cover bg-center" style="background-image: url('Public/images/final-cta-room.jpg');">
-        <div class="absolute inset-0 bg-black/60"></div>
-        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white reveal">
-            <h2 class="text-6xl md:text-7xl font-extrabold uppercase mb-6 tracking-tight">Book Your Stay</h2>
-            <p class="text-lg mb-10 opacity-90">Instant confirmation. Flexible arrival. 24/7 support.</p>
-            <button onclick="scrollToBooking()" class="bg-gold text-white px-12 py-4 rounded text-xs uppercase tracking-widest font-semibold hover:bg-goldhover transition">Book Now</button>
+        <div id="gallery-scroll" class="flex gap-6 overflow-x-auto cursor-drag px-6 lg:px-12 pb-8 hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+            <div class="flex-shrink-0 w-[80vw] md:w-[600px] aspect-[4/3] relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Living Room">
+                <div class="absolute bottom-6 left-6">
+                    <p class="text-xs uppercase tracking-widest text-white/70">Living Area</p>
+                </div>
+            </div>
+            <div class="flex-shrink-0 w-[60vw] md:w-[400px] aspect-[3/4] relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Bedroom Detail">
+                <div class="absolute bottom-6 left-6">
+                    <p class="text-xs uppercase tracking-widest text-white/70">Master Suite</p>
+                </div>
+            </div>
+            <div class="flex-shrink-0 w-[80vw] md:w-[700px] aspect-[16/9] relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Kitchen">
+                <div class="absolute bottom-6 left-6">
+                    <p class="text-xs uppercase tracking-widest text-white/70">Gourmet Kitchen</p>
+                </div>
+            </div>
+            <div class="flex-shrink-0 w-[50vw] md:w-[450px] aspect-[4/5] relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Bathroom">
+                <div class="absolute bottom-6 left-6">
+                    <p class="text-xs uppercase tracking-widest text-white/70">Bathroom</p>
+                </div>
+            </div>
+            <div class="flex-shrink-0 w-[40vw] md:w-[350px] aspect-square relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Details">
+                <div class="absolute bottom-6 left-6">
+                    <p class="text-xs uppercase tracking-widest text-white/70">Details</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section - Let's Talk -->
-    <section id="contact" class="py-24 bg-charcoal text-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 reveal">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <!-- Left Side -->
-                <div>
-                    <h2 class="text-6xl md:text-7xl font-extrabold uppercase mb-8 tracking-tight">Let's Talk</h2>
-                    <p class="text-gray-400 text-lg mb-12 max-w-md">
-                        Have questions? We're here to help. Reach out to us through any of the channels below.
-                    </p>
+    <!-- Experience/Amenities - Grid Layout -->
+    <section id="experience" class="py-32 px-6 lg:px-12 bg-cream">
+        <div class="max-w-[1800px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <div class="reveal">
+                    <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4 font-medium">Amenities</p>
+                    <h2 class="font-serif text-5xl md:text-6xl text-charcoal mb-12 leading-[1.1]">
+                        Everything<br>Considered
+                    </h2>
                     
-                    <div class="space-y-6 mb-12">
-                        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="flex items-center gap-4 group">
-                            <div class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-gold transition">
-                                <i data-lucide="message-circle" class="w-5 h-5"></i>
-                            </div>
-                            <span class="text-lg">WhatsApp Us</span>
-                        </a>
-                        
-                        <a href="mailto:hello@abijosand.com" class="flex items-center gap-4 group">
-                            <div class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-gold transition">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                            </div>
-                            <span class="text-lg">Email Us</span>
-                        </a>
-                        
-                        <a href="tel:+234XXXXXXXXXX" class="flex items-center gap-4 group">
-                            <div class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-gold transition">
-                                <i data-lucide="phone" class="w-5 h-5"></i>
-                            </div>
-                            <span class="text-lg">Call Us</span>
-                        </a>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                        <div class="border-t border-stone pt-6">
+                            <i data-lucide="wifi" class="w-6 h-6 text-gold mb-4"></i>
+                            <h4 class="font-medium text-charcoal mb-2">High-Speed Fiber</h4>
+                            <p class="text-sm text-warm/60 font-light">Unlimited Wi-Fi throughout the property for seamless remote work.</p>
+                        </div>
+                        <div class="border-t border-stone pt-6">
+                            <i data-lucide="zap" class="w-6 h-6 text-gold mb-4"></i>
+                            <h4 class="font-medium text-charcoal mb-2">24/7 Power</h4>
+                            <p class="text-sm text-warm/60 font-light">Inverter and solar backup systems ensure uninterrupted electricity.</p>
+                        </div>
+                        <div class="border-t border-stone pt-6">
+                            <i data-lucide="shield" class="w-6 h-6 text-gold mb-4"></i>
+                            <h4 class="font-medium text-charcoal mb-2">Secure Estate</h4>
+                            <p class="text-sm text-warm/60 font-light">Gated Fidiso Estate with 24-hour security and secure parking.</p>
+                        </div>
+                        <div class="border-t border-stone pt-6">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-gold mb-4"></i>
+                            <h4 class="font-medium text-charcoal mb-2">Housekeeping</h4>
+                            <p class="text-sm text-warm/60 font-light">Optional daily cleaning and linen change service available.</p>
+                        </div>
+                        <div class="border-t border-stone pt-6">
+                            <i data-lucide="wind" class="w-6 h-6 text-gold mb-4"></i>
+                            <h4 class="font-medium text-charcoal mb-2">Climate Control</h4>
+                            <p class="text-sm text-warm/60 font-light">Split-unit air conditioning in all rooms for optimal comfort.</p>
+                        </div>
+                        <div class="border-t border-stone pt-6">
+                            <i data-lucide="tv" class="w-6 h-6 text-gold mb-4"></i>
+                            <h4 class="font-medium text-charcoal mb-2">Entertainment</h4>
+                            <p class="text-sm text-warm/60 font-light">Smart TVs with Netflix, YouTube and streaming services included.</p>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="border-t border-gray-800 pt-8">
-                        <p class="text-gray-500 text-sm">
-                            No 1 Lawyer Close, Fidiso Estate<br>
-                            Abijo, Lekki, Lagos, Nigeria
+                <div class="relative reveal delay-200">
+                    <div class="sticky top-32">
+                        <div class="relative aspect-[4/5] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop" 
+                                 alt="Interior Detail" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white p-8 shadow-xl max-w-xs hidden lg:block">
+                            <p class="font-serif text-xl text-charcoal italic">"Designed for calm. Built for comfort."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location - Large Typography -->
+    <section id="location" class="py-32 px-6 lg:px-12 bg-sand">
+        <div class="max-w-[1800px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 reveal">
+                <div class="lg:col-span-5">
+                    <p class="text-gold uppercase tracking-[0.3em] text-xs mb-4 font-medium">Location</p>
+                    <h2 class="font-serif text-6xl md:text-7xl lg:text-8xl text-charcoal leading-[0.9] mb-8">
+                        Abijo,<br>Lekki
+                    </h2>
+                    <div class="space-y-6 text-warm/80 font-light">
+                        <p class="text-lg leading-relaxed">
+                            Located in the serene Fidiso Estate, offering the perfect balance 
+                            of tranquility and accessibility to Lagos business districts.
                         </p>
+                        <div class="space-y-3 pt-4">
+                            <div class="flex justify-between py-3 border-b border-charcoal/10">
+                                <span>Victoria Island</span>
+                                <span class="text-gold">20 mins</span>
+                            </div>
+                            <div class="flex justify-between py-3 border-b border-charcoal/10">
+                                <span>Lekki Phase 1</span>
+                                <span class="text-gold">15 mins</span>
+                            </div>
+                            <div class="flex justify-between py-3 border-b border-charcoal/10">
+                                <span>Novare Mall</span>
+                                <span class="text-gold">10 mins</span>
+                            </div>
+                            <div class="flex justify-between py-3 border-b border-charcoal/10">
+                                <span>Airport</span>
+                                <span class="text-gold">45 mins</span>
+                            </div>
+                        </div>
+                        <a href="https://maps.google.com/?q=Abijo+Gra+Lekki+Lagos" target="_blank" class="inline-flex items-center gap-2 text-sm font-medium text-charcoal hover:text-gold transition-colors mt-6">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            Get Directions
+                        </a>
                     </div>
                 </div>
-
-                <!-- Right Side - Form -->
-                <div class="bg-cream p-8 md:p-10 rounded-lg">
-                    <h3 class="text-charcoal text-2xl font-semibold mb-8">Send a Message</h3>
-                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold">Name</label>
-                            <input type="text" placeholder="Your name" required class="w-full p-4 border border-gray-200 rounded bg-white text-charcoal placeholder-gray-400 focus:border-gold focus:outline-none transition">
+                <div class="lg:col-span-7 lg:col-start-6">
+                    <div class="aspect-[16/10] overflow-hidden rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2400&auto=format&fit=crop" 
+                             alt="Lekki Location" 
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-4">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Estate View">
                         </div>
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold">Email</label>
-                            <input type="email" placeholder="your@email.com" required class="w-full p-4 border border-gray-200 rounded bg-white text-charcoal placeholder-gray-400 focus:border-gold focus:outline-none transition">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Street View">
                         </div>
-                        <div>
-                            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-bold">Message</label>
-                            <textarea placeholder="How can we help?" rows="5" required class="w-full p-4 border border-gray-200 rounded bg-white text-charcoal placeholder-gray-400 focus:border-gold focus:outline-none transition resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-gold text-white py-4 rounded text-sm font-semibold hover:bg-goldhover transition">Send Message</button>
-                    </form>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section class="py-40 px-6 lg:px-12 bg-charcoal text-cream relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=2400&auto=format&fit=crop" class="w-full h-full object-cover grayscale" alt="Background">
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+            <h2 class="font-serif text-5xl md:text-7xl mb-8 leading-[1.1]">Ready to<br>Experience?</h2>
+            <p class="text-lg text-cream/60 mb-12 font-light">Instant confirmation. Flexible check-in. 24/7 guest support.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToBooking()" class="bg-gold text-charcoal px-12 py-5 text-sm uppercase tracking-[0.2em] font-medium hover:bg-white transition-all duration-300">
+                    Check Availability
+                </button>
+                <a href="https://wa.me/2340000000000" target="_blank" class="border border-cream/30 text-cream px-12 py-5 text-sm uppercase tracking-[0.2em] font-medium hover:bg-cream hover:text-charcoal transition-all duration-300">
+                    WhatsApp Us
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-charcoal border-t border-gray-800 py-8">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <p class="text-gray-500 text-xs">&copy; 2026 Abijo Sand Residence. All rights reserved.</p>
+    <footer class="bg-cream border-t border-stone py-20 px-6 lg:px-12">
+        <div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-4">
+                <div class="mb-6">
+                    <span class="font-serif text-2xl text-charcoal">Abijo Sand</span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-gold mt-1">Residence</span>
+                </div>
+                <p class="text-warm/60 text-sm leading-relaxed font-light max-w-xs">
+                    Premium short-stay apartments in the heart of Lekki. 
+                    Designed for business travelers and discerning guests.
+                </p>
+            </div>
+            
+            <div class="md:col-span-2 md:col-start-7">
+                <h4 class="text-xs uppercase tracking-[0.2em] text-charcoal mb-6 font-medium">Contact</h4>
+                <div class="space-y-3 text-sm text-warm/60 font-light">
+                    <p>No 1 Lawyer Close<br>Fidiso Estate, Abijo<br>Lekki, Lagos</p>
+                    <p>hello@abijosand.com</p>
+                    <p>+234 XXX XXX XXXX</p>
+                </div>
+            </div>
+
+            <div class="md:col-span-2">
+                <h4 class="text-xs uppercase tracking-[0.2em] text-charcoal mb-6 font-medium">Links</h4>
+                <div class="space-y-3 text-sm text-warm/60 font-light">
+                    <a href="#suites" class="block hover:text-gold transition-colors">Suites</a>
+                    <a href="#gallery" class="block hover:text-gold transition-colors">Gallery</a>
+                    <a href="#location" class="block hover:text-gold transition-colors">Location</a>
+                    <a href="#" class="block hover:text-gold transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="md:col-span-2">
+                <h4 class="text-xs uppercase tracking-[0.2em] text-charcoal mb-6 font-medium">Social</h4>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-stone flex items-center justify-center text-warm/60 hover:text-gold hover:border-gold transition-all">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-stone flex items-center justify-center text-warm/60 hover:text-gold hover:border-gold transition-all">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1800px] mx-auto mt-20 pt-8 border-t border-stone text-center text-xs text-warm/40 uppercase tracking-widest">
+            © 2026 Abijo Sand Residence. All rights reserved.
         </div>
     </footer>
 
     <!-- Booking Modal -->
-    <div id="booking-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-lg max-w-md w-full p-8 relative transform transition-all scale-95 opacity-0 shadow-2xl" id="modal-content">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-charcoal transition">
-                <i data-lucide="x" class="w-5 h-5"></i>
+    <div id="booking-modal" class="fixed inset-0 bg-charcoal/90 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-cream w-full max-w-2xl p-8 md:p-12 relative shadow-2xl transform transition-all duration-500 scale-95 opacity-0" id="modal-content">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-warm/40 hover:text-charcoal transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             
-            <h3 class="font-serif text-2xl mb-2 text-charcoal">Complete Your Booking</h3>
-            <p class="text-gray-500 text-xs mb-6">Selected: <span id="selected-room" class="font-medium text-charcoal">Any Available</span></p>
+            <h3 class="font-serif text-3xl text-charcoal mb-2">Complete Your Booking</h3>
+            <p class="text-warm/60 text-sm mb-8" id="selected-suite-text">Select your preferred dates</p>
             
-            <div class="space-y-3 mb-6 bg-sand/30 p-4 rounded text-sm">
-                <div class="flex justify-between">
-                    <span class="text-gray-500">Check-in:</span>
-                    <span class="font-medium text-charcoal" id="modal-checkin">-</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                    <label class="block text-[10px] uppercase tracking-[0.2em] text-warm/50 mb-2">Check In</label>
+                    <input type="date" id="modal-checkin" class="w-full bg-white border border-stone p-4 text-charcoal focus:outline-none focus:border-gold transition-colors">
                 </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-500">Check-out:</span>
-                    <span class="font-medium text-charcoal" id="modal-checkout">-</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-500">Guests:</span>
-                    <span class="font-medium text-charcoal" id="modal-guests">-</span>
-                </div>
-                <div class="border-t border-gray-200 pt-3 flex justify-between mt-2">
-                    <span class="font-medium text-charcoal">Total:</span>
-                    <span class="font-bold text-lg text-gold" id="modal-total">Select dates</span>
+                <div>
+                    <label class="block text-[10px] uppercase tracking-[0.2em] text-warm/50 mb-2">Check Out</label>
+                    <input type="date" id="modal-checkout" class="w-full bg-white border border-stone p-4 text-charcoal focus:outline-none focus:border-gold transition-colors">
                 </div>
             </div>
 
-            <button onclick="processPayment()" class="w-full bg-charcoal text-white py-4 rounded text-xs uppercase tracking-widest font-medium hover:bg-gray-800 transition">
-                Pay with Stripe
+            <div class="bg-white p-6 border border-stone mb-8">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm text-warm/60">Suite</span>
+                    <span class="font-medium text-charcoal" id="modal-suite-name">-</span>
+                </div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm text-warm/60">Nights</span>
+                    <span class="font-medium text-charcoal" id="modal-nights">-</span>
+                </div>
+                <div class="border-t border-stone pt-4 flex justify-between items-center">
+                    <span class="text-charcoal font-medium">Total</span>
+                    <span class="font-serif text-3xl text-gold" id="modal-total">₦0</span>
+                </div>
+            </div>
+
+            <button onclick="processBooking()" class="w-full bg-charcoal text-white py-5 text-sm uppercase tracking-[0.2em] font-medium hover:bg-gold transition-all duration-300">
+                Proceed to Payment
             </button>
-            <p class="text-[10px] text-center text-gray-400 mt-4">Secure payment powered by Stripe</p>
+            <p class="text-center text-xs text-warm/40 mt-4">Secure SSL encryption</p>
         </div>
     </div>
 
@@ -700,51 +627,104 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // Set dates
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('checkin').value = today;
-        document.getElementById('checkin').min = today;
-        
-        const tomorrow = new Date();
+        // Set default dates
+        const today = new Date();
+        const tomorrow = new Date(today);
         tomorrow.setDate(tomorrow.getDate() + 1);
-        document.getElementById('checkout').value = tomorrow.toISOString().split('T')[0];
-        document.getElementById('checkout').min = today;
 
+        document.getElementById('checkin').value = today.toISOString().split('T')[0];
+        document.getElementById('checkout').value = tomorrow.toISOString().split('T')[0];
+        document.getElementById('checkin').min = today.toISOString().split('T')[0];
+
+        // Prices
+        const prices = {
+            'executive': 130000,
+            'deluxe': 85000,
+            'standard': 65000
+        };
+
+        let selectedSuite = null;
+
+        // Mobile menu toggle
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
 
+        // Scroll functions
         function scrollToBooking() {
-            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('suites').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function openModal(room) {
+        function scrollToSuites() {
+            document.getElementById('suites').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Gallery horizontal scroll
+        function scrollGallery(direction) {
+            const container = document.getElementById('gallery-scroll');
+            const scrollAmount = 400;
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // Drag to scroll gallery
+        const slider = document.getElementById('gallery-scroll');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('cursor-grabbing');
+            slider.classList.remove('cursor-drag');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('cursor-grabbing');
+            slider.classList.add('cursor-drag');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('cursor-grabbing');
+            slider.classList.add('cursor-drag');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Modal functions
+        function selectSuite(suite) {
+            selectedSuite = suite;
             const modal = document.getElementById('booking-modal');
             const content = document.getElementById('modal-content');
-            const names = {
+            
+            const suiteNames = {
                 'executive': 'Executive 2-Bedroom',
                 'deluxe': 'Deluxe Studio',
                 'standard': 'Standard Studio'
             };
-            document.getElementById('selected-room').textContent = names[room] || 'Any Available';
             
-            const checkin = document.getElementById('checkin').value;
-            const checkout = document.getElementById('checkout').value;
-            const guests = document.getElementById('guests').value;
+            document.getElementById('selected-suite-text').textContent = suiteNames[suite];
+            document.getElementById('modal-suite-name').textContent = suiteNames[suite];
             
-            document.getElementById('modal-checkin').textContent = checkin || '-';
-            document.getElementById('modal-checkout').textContent = checkout || '-';
-            document.getElementById('modal-guests').textContent = guests + ' Guest(s)';
+            // Pre-fill dates from main form
+            document.getElementById('modal-checkin').value = document.getElementById('checkin').value;
+            document.getElementById('modal-checkout').value = document.getElementById('checkout').value;
             
-            const prices = { 'executive': 130000, 'deluxe': 85000, 'standard': 65000 };
-            if (checkin && checkout && room !== 'any') {
-                const days = Math.max(1, Math.ceil((new Date(checkout) - new Date(checkin)) / (1000 * 60 * 60 * 24)));
-                const total = prices[room] * days;
-                document.getElementById('modal-total').textContent = '₦' + total.toLocaleString();
-            } else {
-                document.getElementById('modal-total').textContent = 'Select dates';
-            }
+            calculateTotal();
             
             modal.classList.remove('hidden');
             setTimeout(() => {
@@ -756,79 +736,73 @@
         function closeModal() {
             const modal = document.getElementById('booking-modal');
             const content = document.getElementById('modal-content');
+            
             content.classList.remove('scale-100', 'opacity-100');
             content.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => modal.classList.add('hidden'), 300);
-        }
-
-        function checkAvailability() {
-            openModal('any');
-        }
-
-        function processPayment() {
-            // Replace with your actual Stripe checkout URL
-            const stripeCheckoutUrl = 'https://checkout.stripe.com/pay/your-checkout-session-id';
-            window.open(stripeCheckoutUrl, '_blank');
-            closeModal();
-        }
-
-            function handleContactSubmit(e) {
-        e.preventDefault();
-        const btn = e.target.querySelector('button[type="submit"]');
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-        
-        setTimeout(() => {
-            btn.textContent = 'Message Sent!';
-            btn.classList.remove('bg-gold');
-            btn.classList.add('bg-green-600');
             
             setTimeout(() => {
-                e.target.reset();
-                btn.textContent = 'Send Message';
-                btn.classList.remove('bg-green-600');
-                btn.classList.add('bg-gold');
-                btn.disabled = false;
-            }, 2000);
-        }, 1500);
-    }
+                modal.classList.add('hidden');
+            }, 500);
+        }
 
-    // Scroll Reveal Animation
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+        function calculateTotal() {
+            if (!selectedSuite) return;
+            
+            const checkin = new Date(document.getElementById('modal-checkin').value);
+            const checkout = new Date(document.getElementById('modal-checkout').value);
+            
+            if (checkin && checkout && checkout > checkin) {
+                const nights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
+                const total = nights * prices[selectedSuite];
+                
+                document.getElementById('modal-nights').textContent = nights;
+                document.getElementById('modal-total').textContent = '₦' + total.toLocaleString();
             }
-        });
-    }, observerOptions);
+        }
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Update calculation when dates change
+        document.getElementById('modal-checkin').addEventListener('change', calculateTotal);
+        document.getElementById('modal-checkout').addEventListener('change', calculateTotal);
 
-    // Close modal on outside click
-    document.getElementById('booking-modal').addEventListener('click', function(e) {
-        if (e.target === this) {
+        function processBooking() {
+            // Integration point for Paystack/Stripe
+            alert('Redirecting to secure payment gateway...\n\nIn production, this connects to your payment processor.');
             closeModal();
         }
-    });
 
-    // Update checkout min date when checkin changes
-    document.getElementById('checkin').addEventListener('change', function() {
-        const checkin = new Date(this.value);
-        const nextDay = new Date(checkin);
-        nextDay.setDate(nextDay.getDate() + 1);
-        document.getElementById('checkout').min = nextDay.toISOString().split('T')[0];
-        
-        if (new Date(document.getElementById('checkout').value) <= checkin) {
-            document.getElementById('checkout').value = nextDay.toISOString().split('T')[0];
-        }
-    });
-</script>
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-            
-            
-            setTimeout
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-cream/95', 'backdrop-blur-md', 'shadow-sm');
+                nav.classList.remove('py-6');
+                nav.classList.add('py-4');
+            } else {
+                nav.classList.remove('bg-cream/95', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+
+        // Close modal on outside click
+        document.getElementById('booking-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+</html>

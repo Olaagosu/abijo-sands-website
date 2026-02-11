@@ -22,104 +22,213 @@
 <body>
 
     <!-- HEADER SECTION - Add this here -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#F5F3F0]/95 backdrop-blur-md border-b border-gray-200/50">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-1">
-                    <span class="text-xl font-black text-[#1C1C1C] tracking-wider">ABIJO SAND</span>
-                    <span class="text-xl font-black text-[#C4A77D] tracking-wider">RESIDENCE</span>
-                </a>
+    <!-- Header/Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#F5F3F0]/95 backdrop-blur-md border-b border-gray-200/50">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-1">
+                <span class="text-xl font-black text-[#1C1C1C] tracking-wider">ABIJO SAND</span>
+                <span class="text-xl font-black text-[#C4A77D] tracking-wider">RESIDENCE</span>
+            </a>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center gap-8 lg:gap-12">
-                    <a href="#suites" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Suites</a>
-                    <a href="#amenities" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Amenities</a>
-                    <a href="#reviews" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Reviews</a>
-                    <a href="#location" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Location</a>
-                    <a href="#contact" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Contact</a>
-                </nav>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 lg:gap-12">
+                <a href="#suites" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Suites</a>
+                <a href="#amenities" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Amenities</a>
+                <a href="#reviews" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Reviews</a>
+                <a href="#location" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Location</a>
+                <a href="#contact" class="text-sm font-bold text-gray-500 hover:text-[#1C1C1C] uppercase tracking-widest transition-colors">Contact</a>
+            </nav>
 
-                <!-- Book Now Button -->
-                <a href="#book" class="hidden md:inline-flex px-8 py-3 bg-[#C4A77D] text-white font-bold uppercase tracking-wider rounded-full hover:bg-[#1C1C1C] transition-all duration-300 text-sm">
-                    Book Now
-                </a>
+            <!-- Book Now Button - Links to Contact Section -->
+            <a href="#contact" class="hidden md:inline-flex px-8 py-3 bg-[#C4A77D] text-white font-bold uppercase tracking-wider rounded-full hover:bg-[#1C1C1C] transition-all duration-300 text-sm">
+                Book Now
+            </a>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden p-2 text-[#1C1C1C]">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 text-[#1C1C1C]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
+    </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-[#F5F3F0] border-t border-gray-200">
-            <div class="px-6 py-4 space-y-4">
-                <a href="#suites" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Suites</a>
-                <a href="#amenities" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Amenities</a>
-                <a href="#reviews" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Reviews</a>
-                <a href="#location" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Location</a>
-                <a href="#contact" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Contact</a>
-                <a href="#book" class="inline-block px-6 py-2 bg-[#C4A77D] text-white font-bold uppercase rounded-full text-sm">Book Now</a>
-            </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#F5F3F0] border-t border-gray-200">
+        <div class="px-6 py-4 space-y-4">
+            <a href="#suites" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Suites</a>
+            <a href="#amenities" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Amenities</a>
+            <a href="#reviews" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Reviews</a>
+            <a href="#location" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Location</a>
+            <a href="#contact" class="block text-sm font-bold text-gray-600 uppercase tracking-widest">Contact</a>
+            <a href="#contact" class="inline-block px-6 py-2 bg-[#C4A77D] text-white font-bold uppercase rounded-full text-sm">Book Now</a>
         </div>
-    </header>
+    </div>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="h-20"></div>
 
     <!-- Spacer for fixed header -->
     <div class="h-20"></div>
 
     <!-- HERO SECTION (Replace with your new animated one) -->
-    <section class="relative w-full h-[80vh] min-h-[600px] max-h-[900px] overflow-hidden bg-[#1C1C1C]">
-        <div class="absolute inset-0 w-[110%] h-full animate-pan-slow">
-            <img src="images/final-cta-room.jpg" alt="Luxury Living Room" class="w-full h-full object-cover">
-        </div>
-        <div class="absolute inset-0 bg-black/30"></div>
-        <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase leading-[0.9] mb-6">
-                Your Luxury Home<br><span class="text-[#C4A77D]">Away From Home</span>
-            </h1>
-            <p class="text-lg md:text-xl text-white/90 uppercase tracking-[0.2em]">Premium Serviced Apartments at Fidiso Estate, Abijo Lekki</p>
-            <a href="#suites" class="mt-10 px-8 py-4 bg-[#C4A77D] text-white font-bold uppercase rounded-full hover:bg-white hover:text-[#1C1C1C] transition-all">Explore Suites</a>
-        </div>
-    </section>
+    <!-- Hero Section -->
+<section class="relative w-full h-[80vh] min-h-[600px] max-h-[900px] overflow-hidden bg-[#1C1C1C]">
+    
+    <!-- Moving Background Image -->
+    <div class="absolute inset-0 w-[110%] h-full animate-pan-slow">
+        <img src="images/amenities-room.jpg" 
+             alt="Abijo Sand Residence Luxury Interior" 
+             class="w-full h-full object-cover">
+    </div>
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/30"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase tracking-tight leading-[0.9] mb-6 drop-shadow-2xl">
+            Your Luxury Home<br>
+            <span class="text-[#C4A77D]">Away From Home</span>
+        </h1>
+        <p class="text-lg md:text-xl lg:text-2xl text-white/90 uppercase tracking-[0.2em] font-medium drop-shadow-lg">
+            Premium Serviced Apartments at Fidiso Estate, Abijo Lekki
+        </p>
+        
+        <!-- Book Now Button - Works -->
+        <a href="#contact" class="mt-10 px-8 py-4 bg-[#C4A77D] text-white font-bold uppercase tracking-wide rounded-full hover:bg-white hover:text-[#1C1C1C] transition-all duration-300 shadow-xl">
+            Book Now
+        </a>
+    </div>
+
+</section>
+
+<style>
+    @keyframes pan-slow {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(-5%); }
+    }
+    .animate-pan-slow { animation: pan-slow 20s ease-in-out infinite; }
+</style>
 
     <!-- YOUR CHOOSE YOUR SPACE SECTION -->
-    <section id="suites" class="py-20 lg:py-32 bg-[#F5F3F0]">
-        <!-- Your existing suite cards content here -->
-    </section>
+  <!-- Choose Your Space Section -->
+<section id="suites" class="py-20 lg:py-32 bg-[#F5F3F0]">
+    <div class="px-6 lg:px-12 mb-16">
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-[#1C1C1C] uppercase tracking-tight text-center">
+            CHOOSE YOUR SPACE
+        </h2>
+    </div>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Premium Suite -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                <div class="relative h-64 overflow-hidden">
+                    <span class="absolute top-4 left-4 bg-[#C4A77D] text-white px-4 py-1 text-xs font-bold uppercase tracking-wide z-10">Premium</span>
+                    <img src="images/amenities-room.jpg" alt="Premium Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 lg:p-8">
+                    <h3 class="text-2xl font-bold text-[#1C1C1C] mb-3">The Executive Suite</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Experience ultimate luxury with panoramic views and premium amenities.</p>
+                    
+                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                        <span class="flex items-center gap-1">
+                            <i data-lucide="users" class="w-4 h-4"></i> Up to 4 guests
+                        </span>
+                        <span>85 sqm</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold uppercase">King Bed</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold uppercase">Full Kitchen</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold uppercase">Balcony</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <div>
+                            <span class="text-3xl font-black text-[#1C1C1C]">₦85,000</span>
+                            <span class="text-gray-500 text-sm">/night</span>
+                        </div>
+                        <a href="#contact" class="px-6 py-2 border-2 border-[#C4A77D] text-[#C4A77D] font-bold uppercase rounded-full hover:bg-[#C4A77D] hover:text-white transition-all text-sm">Book</a>
+                    </div>
+                </div>
+            </div>
 
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+            <!-- Most Popular -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group border-2 border-[#C4A77D]">
+                <div class="relative h-64 overflow-hidden">
+                    <span class="absolute top-4 left-4 bg-[#1C1C1C] text-white px-4 py-1 text-xs font-bold uppercase tracking-wide z-10">Most Popular</span>
+                    <img src="images/amenities-room.jpg" alt="Deluxe Studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 lg:p-8">
+                    <h3 class="text-2xl font-bold text-[#1C1C1C] mb-3">The Deluxe Studio</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Perfect blend of comfort and style for the discerning traveler.</p>
+                    
+                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                        <span class="flex items-center gap-1">
+                            <i data-lucide="users" class="w-4 h-4"></i> Up to 2 guests
+                        </span>
+                        <span>45 sqm</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold uppercase">Queen Bed</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold uppercase">Kitchenette</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold uppercase">Work Desk</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <div>
+                            <span class="text-3xl font-black text-[#1C1C1C]">₦55,000</span>
+                            <span class="text-gray-500 text-sm">/night</span>
+                        </div>
+                        <a href="#contact" class="px-6 py-2 bg-[#C4A77D] text-white font-bold uppercase rounded-full hover:bg-[#1C1C1C] transition-all text-sm">Book</a>
+                    </div>
+                </div>
+            </div>
 
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
+            <!-- Smart Choice -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                <div class="relative h-64 overflow-hidden">
+                    <span class="absolute top-4 left-4 bg-white text-[#1C1C1C] px-4 py-1 text-xs font-bold uppercase tracking-wide z-10 shadow-md">Smart Choice</span>
+                    <img src="images/amenities-room.jpg" alt="Classic Studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 lg:p-8">
+                    <h3 class="text-2xl font-bold text-[#1C1C1C] mb-3">The Classic Studio</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Essential comfort thoughtfully curated for budget-conscious luxury.</p>
+                    
+                    <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                        <span class="flex items-center gap-1">
+                            <i data-lucide="users" class="w-4 h-4"></i> Up to 2 guests
+                        </span>
+                        <span>35 sqm</span>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold uppercase">Queen Bed</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold uppercase">Kitchenette</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-xs font-semibold uppercase">Smart TV</span>
+                    </div>
+                    
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <div>
+                            <span class="text-3xl font-black text-[#1C1C1C]">₦40,000</span>
+                            <span class="text-gray-500 text-sm">/night</span>
+                        </div>
+                        <a href="#contact" class="px-6 py-2 border-2 border-[#C4A77D] text-[#C4A77D] font-bold uppercase rounded-full hover:bg-[#C4A77D] hover:text-white transition-all text-sm">Book</a>
+                    </div>
+                </div>
+            </div>
 
-    <style>
-        @keyframes pan-slow {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(-5%); }
-        }
-        .animate-pan-slow { animation: pan-slow 20s ease-in-out infinite; }
-    </style>
-
-</body>
-</html>
+        </div>
+    </div>
+</section>
 
     <!-- Suites Section -->
     <section id="suites" class="py-24 px-6 lg:px-12 bg-[#F5F3F0]">
